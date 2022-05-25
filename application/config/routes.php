@@ -52,3 +52,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'backend';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['dashboard'] = 'backend/dashboard';
+$route['carousel'] = 'cms/carousel';
+$route['profile'] = 'cms/profile';
+$route['prestasi'] = 'cms/prestasi';
+$route['galeri'] = 'cms/galeri';
+$route['news'] = 'cms/news';
+
+$route['data-guru'] = 'backend/data_guru';
+$route['data-mapel'] = 'backend/data_mapel';
+$route['data-jabatan'] = 'backend/data_jabatan';
+$route['data-kategori'] = 'backend/data_kategori';

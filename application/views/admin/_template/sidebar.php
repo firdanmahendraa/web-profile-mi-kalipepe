@@ -13,13 +13,25 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">\
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="<?php echo base_url('dashboard') ?>" <?=$this->uri->segment(1) == 'dashboard' || $this->uri->segment(1) == '' ? 'class="nav-link active"':'' ?> class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+          <li class="nav-item 
+            <?=$this->uri->segment(1) == 'carousel' ||
+               $this->uri->segment(1) == 'profile' || 
+               $this->uri->segment(1) == 'prestasi' ||
+               $this->uri->segment(1) == 'galeri' ||
+               $this->uri->segment(1) == 'news' ||
+               $this->uri->segment(1) == '' ? 'menu-open':'' ?>">
+            <a href="#" class="nav-link
+            <?=$this->uri->segment(1) == 'carousel' ||
+               $this->uri->segment(1) == 'profile' || 
+               $this->uri->segment(1) == 'prestasi' ||
+               $this->uri->segment(1) == 'galeri' ||
+               $this->uri->segment(1) == 'news' ||
+               $this->uri->segment(1) == '' ? 'active':'' ?>">
               <i class="nav-icon fas fa-copy"></i>
               <p>Content Management
                 <i class="fas fa-angle-left right"></i>
@@ -27,31 +39,31 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
+                <a href="<?php echo base_url('carousel') ?>" class="nav-link <?=$this->uri->segment(1) == 'carousel' || $this->uri->segment(1) == '' ? 'active':'' ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Carousel</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                <a href="<?php echo base_url('profile') ?>" class="nav-link <?=$this->uri->segment(1) == 'profile' || $this->uri->segment(1) == '' ? 'active':'' ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Profile</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
+                <a href="<?php echo base_url('prestasi') ?>" class="nav-link <?=$this->uri->segment(1) == 'prestasi' || $this->uri->segment(1) == '' ? 'active':'' ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Prestasi</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
+                <a href="<?php echo base_url('galeri') ?>" class="nav-link <?=$this->uri->segment(1) == 'galeri' || $this->uri->segment(1) == '' ? 'active':'' ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Galery</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
+                <a href="<?php echo base_url('news') ?>" class="nav-link <?=$this->uri->segment(1) == 'news' || $this->uri->segment(1) == '' ? 'active':'' ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Hot News</p>
                 </a>
@@ -60,25 +72,25 @@
           </li>
           <li class="nav-header">MENU</li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="<?php echo base_url('data-guru') ?>" <?=$this->uri->segment(1) == 'data-guru' || $this->uri->segment(1) == '' ? 'class="nav-link active"':'' ?> class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>Data Guru</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="<?php echo base_url('data-mapel') ?>" <?=$this->uri->segment(1) == 'data-mapel' || $this->uri->segment(1) == '' ? 'class="nav-link active"':'' ?> class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>Data Mata Pelajaran</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="<?php echo base_url('data-jabatan') ?>" <?=$this->uri->segment(1) == 'data-jabatan' || $this->uri->segment(1) == '' ? 'class="nav-link active"':'' ?> class="nav-link">
               <i class="nav-icon fas fa-graduation-cap"></i>
               <p>Data Jabatan</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="<?php echo base_url('data-kategori') ?>" <?=$this->uri->segment(1) == 'data-kategori' || $this->uri->segment(1) == '' ? 'class="nav-link active"':'' ?> class="nav-link">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>Daftar Kategori</p>
             </a>
