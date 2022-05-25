@@ -1,0 +1,336 @@
+body{
+	font-family: sans-serif;
+}
+aside .brand{
+	display: flex;
+}
+aside .brand img{
+	width: 45px;
+	height: 45px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+aside .brand h1{
+	font-size: 16px;
+	font-weight: 450;
+	line-height: 25px;
+	text-transform: uppercase;
+}
+
+#topbar{
+	background-color: #15477A;
+	color: #fff;
+  	transition: all 0.5s;
+	padding: 5px 0;
+}
+#topbar.topbar-scrolled {
+  top: -40px;
+}
+#header.navbar-scrolled {
+  top: 1;
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: $zindex-fixed;
+}
+
+.brand{
+	display: flex;
+}
+
+.brand img{
+	margin-right: 20px;
+}
+
+.brand-bar{
+	margin-right: 20px;
+	margin-left: 8px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.brand .brand-name h1{
+  margin-top:3px;
+  padding-top:0px;
+  font-size: 20px;
+  font-family: Raleway, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.brand .brand-name h3{
+	text-transform: capitalize;
+  margin-top:-10px;
+  padding-top:2px;
+  font-size: 15px;
+  font-family: Raleway, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.searchbox{
+	width: 100%;
+}
+
+.searchbox-wraper{
+	display: flex;
+	align-items: center;
+}
+.navbar-light .navbar-nav .nav-link{
+	padding: 10px 30px;
+	display: inline-block;
+}
+
+/*carousel style*/
+.carousel-item img {
+	width: 800px; 
+	height: 544px;
+	object-fit: cover;
+}
+.carousel-caption {
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+/*profie style*/
+.section-title {
+	margin-bottom: 60px;
+	text-align: center;
+}
+.section-title h2{
+	position: relative;
+	display: inline-block;
+	margin: 0 auto;
+	font-size: 28px;
+	text-transform: uppercase;
+	color: #15477A;
+	font-weight: 600;
+}
+.section-title h2:after {
+	position: absolute;
+	content: "";
+	width: 90%;
+	height: 3px;
+	background-color: #ffc107;
+	bottom: -15px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.section-body {
+	margin-bottom: 70px;
+}
+
+.card-picture{
+	height: 200px;
+	object-fit: cover;
+}
+/*css lihat selengkapnya*/
+.more-button {
+	text-align: center;
+	padding: 40px 0 60px 0;
+}
+.btn.btn-more {
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-weight: 400;
+	color: #15477A;
+	text-align: center;
+	display: inline-block;
+	border: 2px solid #15477A;
+	border-radius: 10;
+	padding: 10px 30px;
+}
+.teacher h1{
+	position: relative;
+	margin-top: 20px;
+	font-family: sans-serif;
+	font-size: 20px;
+	text-align: center;
+	color: #15477A;
+	font-weight: 600;
+}
+.teacher p{
+	position: relative;
+	margin-top: -10px;
+	font-family: sans-serif;
+	font-size: 18px;
+	text-align: center;
+	color: #ffc107;
+	font-weight: 600;
+}
+
+.teacher-img {
+  width: 300px; 
+	height: 300px;
+	object-fit: cover;
+  border-radius: 50%;
+  margin: 0 0 0 30px;
+  position: relative;
+  z-index: 2;
+}
+
+
+/* title halaman tenaga pendidik  */
+
+.title-guru {
+	margin-bottom: 60px;
+	text-align: center;
+}
+.title-guru h2{
+	position: relative;
+	display: inline-block;
+	/* margin: 0 auto; */
+	margin-top: 20px;
+	font-size: 28px;
+	text-transform: uppercase;
+	color: #15477A;
+	font-weight: 600;
+}
+.title-guru h2:after {
+	position: absolute;
+	content: "";
+	width: 90%;
+	height: 3px;
+	background-color: #ffc107;
+	bottom: -15px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+/* css halaman tenaga pendidik */
+.teacher2 h1{
+	position: relative;
+	margin-top: 15px;
+	font-family: sans-serif;
+	font-size: 15px;
+	text-align: center;
+	color: #15477A;
+	font-weight: 600;
+}
+.teacher2 p{
+	position: relative;
+	margin-top: -10px;
+	font-family: sans-serif;
+	font-size: 12px;
+	text-align: center;
+	color: #ffc107;
+	font-weight: 600;
+}
+
+.teacher2-img {
+  width: 150px; 
+	height: 150px;
+	object-fit: cover;
+  border-radius: 50%;
+  margin: 0 0 0 15px;
+  position: relative;
+  z-index: 2;
+}
+
+/* tenaga pendidik */
+
+
+/*--------------------------------------------------------------
+# Gallery
+--------------------------------------------------------------*/
+.gallery {
+  overflow: hidden;
+}
+.gallery .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+.gallery .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #15477A;
+}
+.gallery .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #15477A;
+}
+.gallery .swiper-slide-active {
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .gallery .swiper-wrapper {
+    padding: 40px 0;
+  }
+  .gallery .swiper-slide-active {
+    border: 6px solid #15477A;
+    padding: 4px;
+    background: #fff;
+    z-index: 1;
+    transform: scale(1.2);
+    margin-top: 10px;
+  }
+}
+
+/*css footer*/
+footer {
+	padding: 40px 40px 20px 40px;
+	background-color: #15477A;
+	color: #fff;
+}
+footer .brand{
+	display: flex;
+}
+footer .brand img{
+	width: 50px;
+	height: 50px;
+	margin-right: 20px;
+}
+footer .brand h1{
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 25px;
+	text-transform: uppercase;
+}
+footer .submenu{
+	font-size: 14px;
+	line-height: 26px;
+}
+footer .submenu li a{
+	list-style: none;
+	color: #fff;
+}
+footer .menu{
+	list-style: none;
+}
+footer .menu h1{
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 25px;
+	text-transform: uppercase;
+}
+.sosmed {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.sosmed li{
+	padding-top: 5px;
+	display: inline-block;
+	margin-right: 30px;
+}
+.sosmed li a{
+	color: #fff;
+	border: 2px solid rgba(255, 255, 255, 0.7);
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	border-radius: 50%;
+	font-size: 20px;
+	line-height: 40px;
+}
+.copyright {
+	padding: 3px 0;
+	background-color: #113d69;
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 600;
+}
+.copyright p{
+	padding-bottom: -3px;
+}
