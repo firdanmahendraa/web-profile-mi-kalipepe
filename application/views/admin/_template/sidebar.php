@@ -91,7 +91,7 @@
             <?=$this->uri->segment(1) == 'data-jabatan' ||
                $this->uri->segment(1) == 'data-kategori' || 
                $this->uri->segment(1) == '' ? 'active':'' ?>">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-wrench"></i>
               <p>Setting
                 <i class="fas fa-angle-left right"></i>
               </p>
