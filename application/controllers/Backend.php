@@ -37,11 +37,22 @@ class Backend extends CI_Controller {
 	public function data_guru()	{
 		$this->template->views('admin/data_guru');
 	}
+
 	// Setting
-	public function data_jabatan()	{
+	public function tambah_jabatan(){//create jabatan
+		$nama_jabatan = $this->input->post('nama_jabatan');
+ 
+		$data = array(
+			'nama_jabatan' => $nama_jabatan
+			);
+		$this->m_app->input_jabatan($data,'tb_jabatan');
+		redirect('data-jabatan');
+	}
+	public function data_jabatan()	{//read jabatan
 		$data['jabatan'] = $this->m_app->read_datajabatan()->result();
 		$this->template->views('admin/data_jabatan',$data);
 	}
+	
 	public function data_kategori()	{
 		$this->template->views('admin/data_kategori');
 	}

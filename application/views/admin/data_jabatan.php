@@ -21,7 +21,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-             <button class="btn btn-xs btn-primary card-title" data-toggle="modal" data-target="#tambah-guru"><i class="fas fa-plus"></i> Tambah Guru</button>
+             <button class="btn btn-xs btn-primary card-title" data-toggle="modal" data-target="#tambah-jabatan"><i class="fas fa-plus"></i> Tambah Guru</button>
              <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 200px;">
                   <input type="text" id="table_search" class="form-control float-right" placeholder="Search">
@@ -61,3 +61,32 @@
         </div>
       </div>
     </div>
+
+      <!-- Modal Tambah -->
+      <div class="modal fade" id="tambah-jabatan">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Tambah Jabatan</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="<?php echo base_url('backend/tambah_jabatan') ?>" method="post">
+                <div class="form-group">
+                  <label>Posisi Jabatan</label>
+                  <input type="text" name="nama_jabatan" class="form-control"> 
+                </div>
+                <div class="modal-footer justify-content-between">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Tambah Jabatan</button>
+                </div>
+            </div>
+              </form>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal Tambah -->

@@ -3,8 +3,11 @@
  * 
  */
 class M_app extends CI_Model{
-	
-	public function read_datajabatan(){
+	// Jabatan Model
+	function input_jabatan($data,$table){//create jabatan
+		$this->db->insert($table,$data);
+	}
+	function read_datajabatan(){//read jabatan
         return $this->db->get('tb_jabatan');         
     }
 
