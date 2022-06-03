@@ -11,7 +11,7 @@
 <!-- ChartJS -->
 <script src="<?php echo base_url('assets/admin/plugins/chart.js/Chart.min.js') ?>"></script>
 <!-- Sparkline -->
-<script src="<?php echo base_url('assets/admin/plugins/sparklines/sparkline.js') ?>"></script>
+<!-- <script src="<?php echo base_url('assets/admin/plugins/sparklines/sparkline.js') ?>"></script> -->
 <!-- JQVMap -->
 <script src="<?php echo base_url('assets/admin/plugins/jqvmap/jquery.vmap.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/admin/plugins/jqvmap/maps/jquery.vmap.usa.js') ?>"></script>
@@ -31,4 +31,5 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url('assets/admin/dist/js/demo.js') ?>"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo base_url('assets/admin/dist/js/pages/dashboard.js') ?>"></script>
+<!-- <script src="<?php echo base_url('assets/admin/dist/js/pages/dashboard.js') ?>"></script> -->
+

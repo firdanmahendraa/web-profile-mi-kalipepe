@@ -83,17 +83,33 @@
               <p>Data Mata Pelajaran</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="<?php echo base_url('data-jabatan') ?>" <?=$this->uri->segment(1) == 'data-jabatan' || $this->uri->segment(1) == '' ? 'class="nav-link active"':'' ?> class="nav-link">
-              <i class="nav-icon fas fa-graduation-cap"></i>
-              <p>Data Jabatan</p>
+          <li class="nav-item 
+            <?=$this->uri->segment(1) == 'data-jabatan' ||
+               $this->uri->segment(1) == 'data-kategori' || 
+               $this->uri->segment(1) == '' ? 'menu-open':'' ?>">
+            <a href="#" class="nav-link
+            <?=$this->uri->segment(1) == 'data-jabatan' ||
+               $this->uri->segment(1) == 'data-kategori' || 
+               $this->uri->segment(1) == '' ? 'active':'' ?>">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>Setting
+                <i class="fas fa-angle-left right"></i>
+              </p>
             </a>
-          </li>
-          <li class="nav-item">
-            <a href="<?php echo base_url('data-kategori') ?>" <?=$this->uri->segment(1) == 'data-kategori' || $this->uri->segment(1) == '' ? 'class="nav-link active"':'' ?> class="nav-link">
-              <i class="nav-icon fas fa-list-alt"></i>
-              <p>Daftar Kategori</p>
-            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo base_url('data-jabatan') ?>" class="nav-link <?=$this->uri->segment(1) == 'data-jabatan' || $this->uri->segment(1) == '' ? 'active':'' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Jabatan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('data-kategori') ?>" class="nav-link <?=$this->uri->segment(1) == 'data-kategori' || $this->uri->segment(1) == '' ? 'active':'' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Kategori</p>
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>
