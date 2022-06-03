@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Backend extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
-		// $this->load->model('m_mapel');
+		$this->load->model('m_app');
 
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("login"));
@@ -37,11 +37,10 @@ class Backend extends CI_Controller {
 	public function data_guru()	{
 		$this->template->views('admin/data_guru');
 	}
-	public function data_mapel()	{
-		$this->template->views('admin/data_mapel');
-	}
+	// Setting
 	public function data_jabatan()	{
-		$this->template->views('admin/data_jabatan');
+		$data['jabatan'] = $this->m_app->read_datajabatan()->result();
+		$this->template->views('admin/data_jabatan',$data);
 	}
 	public function data_kategori()	{
 		$this->template->views('admin/data_kategori');
