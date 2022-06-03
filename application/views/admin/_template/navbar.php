@@ -51,8 +51,7 @@
               <img src="<?php echo base_url('assets/admin/dist/img/user2-160x160.jpg'); ?>" class="img-circle " alt="User Image">
             </div>
             <div class="info">
-              <p>Hai, Nama</p>
-              <!-- <p>Hai, <?php echo $_SESSION['nama']; ?></p> -->
+              <p>Hai, <?php echo $_SESSION['nama']; ?></p> 
             </div>
           </div>
         <div class="dropdown-divider"></div>

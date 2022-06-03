@@ -2,13 +2,35 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Backend extends CI_Controller {
+	public function __construct(){
+		parent::__construct();
+		// $this->load->model('m_mapel');
 
-	public function index()	{
-		$this->load->view('admin/login');
+		if($this->session->userdata('status') != "login"){
+			redirect(base_url("login"));
+		}
+		
 	}
 
-	public function dashboard()	{
+	public function index()	{
 		$this->template->views('admin/dashboard');
+	}
+
+	// CMS
+	public function carousel()	{
+		$this->template->views('admin/carousel');
+	}
+	public function profile()	{
+		$this->template->views('admin/profile');
+	}
+	public function prestasi()	{
+		$this->template->views('admin/prestasi');
+	}
+	public function galeri()	{
+		$this->template->views('admin/galeri');
+	}
+	public function news()	{
+		$this->template->views('admin/news');
 	}
 
 	// Menu
