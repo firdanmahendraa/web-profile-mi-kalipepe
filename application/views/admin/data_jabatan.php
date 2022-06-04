@@ -52,9 +52,9 @@
                         <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-jabatan<?php echo $ssw->id_jabatan; ?>">
                           <i class="fas fa-edit" style="color: #fff;"></i>
                         </button>
-                        <button class="btn btn-sm btn-danger" href="<?php echo base_url()?>Datajabatan/delete/<?=$ssw->id_jabatan;?>">
+                        <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>Backend/hapus_jabatan/<?php echo $ssw->id_jabatan; ?>>">
                           <i class="fas fa-trash"></i>
-                        </button>
+                        </a>
                       </td>
                     </tr>
                   </tbody>

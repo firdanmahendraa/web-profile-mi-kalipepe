@@ -67,6 +67,11 @@ class Backend extends CI_Controller {
 		$this->m_app->update_jabatan($id,$data);
 		redirect('data-jabatan');
 	}
+	function hapus_jabatan($id){
+		$where = array('id_jabatan' => $id);
+		$this->m_app->delete_jabatan($where,'tb_jabatan');
+		redirect('data-jabatan');
+    }
 
 	public function data_kategori()	{
 		$this->template->views('admin/data_kategori');
