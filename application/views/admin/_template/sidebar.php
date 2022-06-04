@@ -77,19 +77,15 @@
               <p>Data Guru</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="<?php echo base_url('data-mapel') ?>" <?=$this->uri->segment(1) == 'data-mapel' || $this->uri->segment(1) == '' ? 'class="nav-link active"':'' ?> class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
-              <p>Data Mata Pelajaran</p>
-            </a>
-          </li>
           <li class="nav-item 
             <?=$this->uri->segment(1) == 'data-jabatan' ||
-               $this->uri->segment(1) == 'data-jenjang' || 
+               $this->uri->segment(1) == 'data-jenjang' ||
+               $this->uri->segment(1) == 'data-mapel' ||  
                $this->uri->segment(1) == '' ? 'menu-open':'' ?>">
             <a href="#" class="nav-link
             <?=$this->uri->segment(1) == 'data-jabatan' ||
                $this->uri->segment(1) == 'data-jenjang' || 
+               $this->uri->segment(1) == 'data-mapel' || 
                $this->uri->segment(1) == '' ? 'active':'' ?>">
               <i class="nav-icon fas fa-wrench"></i>
               <p>Setting
@@ -107,6 +103,12 @@
                 <a href="<?php echo base_url('data-jenjang') ?>" class="nav-link <?=$this->uri->segment(1) == 'data-jenjang' || $this->uri->segment(1) == '' ? 'active':'' ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Jenjang Pendidikan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('data-mapel') ?>" class="nav-link <?=$this->uri->segment(1) == 'data-mapel' || $this->uri->segment(1) == '' ? 'active':'' ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Mata Pelajaran</p>
                 </a>
               </li>
             </ul>

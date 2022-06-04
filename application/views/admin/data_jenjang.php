@@ -38,7 +38,7 @@
                 <thead>
                   <tr>
                     <th width="10%">No</th>
-                    <th>Nama Jabatan</th>
+                    <th>Jenjang Pendidikan</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
