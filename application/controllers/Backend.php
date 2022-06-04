@@ -75,7 +75,16 @@ class Backend extends CI_Controller {
     }
 
     // ============== Data Jabatan ==============
-	public function data_jenjang()	{//read jenjang
+	function tambah_jenjang(){//create jabatan
+		$jenjang_pendidikan = $this->input->post('jenjang_pendidikan');
+ 
+		$data = array(
+			'jenjang_pendidikan' => $jenjang_pendidikan
+			);
+		$this->m_app->create_jenjangpendidikan($data,'tb_pendidikan');
+		redirect('data-jenjang');
+	}
+	function data_jenjang()	{//read jenjang
 		$data['jenjang'] = $this->m_app->read_jenjangpendidikan()->result();
 		$this->template->views('admin/data_jenjang',$data);
 	}

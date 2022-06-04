@@ -79,7 +79,7 @@
         <div class="modal-body">
           <form action="<?php echo base_url('backend/tambah_jenjang') ?>" method="post">
             <div class="form-group">
-              <label>Posisi Jabatan</label>
+              <label>Jenjang Pendidikan</label>
               <input type="text" name="jenjang_pendidikan" class="form-control"> 
             </div>
             <div class="modal-footer justify-content-between">

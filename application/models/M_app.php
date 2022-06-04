@@ -20,6 +20,9 @@ class M_app extends CI_Model{
     }
 
     // ============== Jenjang Model ==============
+	function create_jenjangpendidikan($data,$table){//create jabatan
+		$this->db->insert($table,$data);
+	}
     function read_jenjangpendidikan(){//read jejangpendidikan
         return $this->db->get('tb_pendidikan');         
     }
