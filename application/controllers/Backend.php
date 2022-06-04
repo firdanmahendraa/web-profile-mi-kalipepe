@@ -95,5 +95,10 @@ class Backend extends CI_Controller {
 		$this->m_app->update_jenjangpendidikan($id,$data);
 		redirect('data-jenjang');
 	}
+	function hapus_jenjang($id){//delete jabatan
+		$where = array('id_pendidikan' => $id);
+		$this->m_app->delete_jabatan($where,'tb_pendidikan');
+		redirect('data-jenjang');
+    }
 
 }

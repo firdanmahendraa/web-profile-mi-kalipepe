@@ -30,6 +30,10 @@ class M_app extends CI_Model{
         $this->db->where('id_pendidikan',$id);
         $this->db->update('tb_pendidikan', $data);
 	}
+	function delete_jenjangpendidikan($where,$table){//delete jabatan
+        $this->db->where($where);
+		$this->db->delete($table);       
+    }
 
 }
  ?>
