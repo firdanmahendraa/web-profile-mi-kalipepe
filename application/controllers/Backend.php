@@ -39,7 +39,7 @@ class Backend extends CI_Controller {
 	}
 
 	// Setting
-	public function tambah_jabatan(){//create jabatan
+	function tambah_jabatan(){//create jabatan
 		$nama_jabatan = $this->input->post('nama_jabatan');
  
 		$data = array(
@@ -48,11 +48,26 @@ class Backend extends CI_Controller {
 		$this->m_app->input_jabatan($data,'tb_jabatan');
 		redirect('data-jabatan');
 	}
-	public function data_jabatan()	{//read jabatan
+	function data_jabatan()	{//read jabatan
 		$data['jabatan'] = $this->m_app->read_datajabatan()->result();
 		$this->template->views('admin/data_jabatan',$data);
 	}
-	
+	function get_id($id){//get id update jabatan
+		$where = array('id_jabatan' => $id_jabatan);
+		$data['user'] = $this->m_app->update_jabatan($where,'user')->result();
+	}
+	function ubah_jabatan(){//update jabatan
+		$id= $this->input->post('id');	
+		$nama_jabatan = $this->input->post('nama_jabatan');
+	 
+		$data = array(
+			'nama_jabatan' => $nama_jabatan
+		);
+
+		$this->m_app->update_jabatan($id,$data);
+		redirect('data-jabatan');
+	}
+
 	public function data_kategori()	{
 		$this->template->views('admin/data_kategori');
 	}

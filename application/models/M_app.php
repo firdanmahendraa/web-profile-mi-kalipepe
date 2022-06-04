@@ -10,6 +10,10 @@ class M_app extends CI_Model{
 	function read_datajabatan(){//read jabatan
         return $this->db->get('tb_jabatan');         
     }
+    function update_jabatan($id,$data){
+        $this->db->where('id_jabatan',$id);
+        $this->db->update('tb_jabatan', $data);
+	}
 
 }
  ?>
