@@ -26,6 +26,10 @@ class M_app extends CI_Model{
     function read_jenjangpendidikan(){//read jejangpendidikan
         return $this->db->get('tb_pendidikan');         
     }
+    function update_jenjangpendidikan($id,$data){//update jabatan
+        $this->db->where('id_pendidikan',$id);
+        $this->db->update('tb_pendidikan', $data);
+	}
 
 }
  ?>

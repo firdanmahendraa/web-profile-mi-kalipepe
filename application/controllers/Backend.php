@@ -53,10 +53,6 @@ class Backend extends CI_Controller {
 		$data['jabatan'] = $this->m_app->read_datajabatan()->result();
 		$this->template->views('admin/data_jabatan',$data);
 	}
-	function get_id($id){//get id update jabatan
-		$where = array('id_jabatan' => $id_jabatan);
-		$data['user'] = $this->m_app->update_jabatan($where,'user')->result();
-	}
 	function ubah_jabatan(){//update jabatan
 		$id= $this->input->post('id');	
 		$nama_jabatan = $this->input->post('nama_jabatan');
@@ -75,7 +71,7 @@ class Backend extends CI_Controller {
     }
 
     // ============== Data Jabatan ==============
-	function tambah_jenjang(){//create jabatan
+	function tambah_jenjang(){//create jenjang
 		$jenjang_pendidikan = $this->input->post('jenjang_pendidikan');
  
 		$data = array(
@@ -87,6 +83,17 @@ class Backend extends CI_Controller {
 	function data_jenjang()	{//read jenjang
 		$data['jenjang'] = $this->m_app->read_jenjangpendidikan()->result();
 		$this->template->views('admin/data_jenjang',$data);
+	}
+	function ubah_jenjang(){//update jenjang
+		$id= $this->input->post('id');	
+		$jenjang_pendidikan = $this->input->post('jenjang_pendidikan');
+	 
+		$data = array(
+			'jenjang_pendidikan' => $jenjang_pendidikan
+		);
+
+		$this->m_app->update_jenjangpendidikan($id,$data);
+		redirect('data-jenjang');
 	}
 
 }

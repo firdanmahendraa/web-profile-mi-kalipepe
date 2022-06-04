@@ -97,7 +97,7 @@
 
   <!-- Modal Edit -->
   <?php foreach ($jenjang as $j) { ?>
-  <div class="modal fade" id="edit-jenjang?php echo $j->id_pendidikan; ?>">
+  <div class="modal fade" id="edit-jenjang<?php echo $j->id_pendidikan; ?>">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -111,7 +111,7 @@
             <div class="form-group">
               <label>Posisi Jabatan</label>
               <input type="hidden" name="id" value="<?php echo $j->id_pendidikan ?>">
-              <input type="text" name="nama_jabatan" value="<?php echo $j->jenjang_pendidikan ?>" class="form-control"> 
+              <input type="text" name="jenjang_pendidikan" value="<?php echo $j->jenjang_pendidikan ?>" class="form-control"> 
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
