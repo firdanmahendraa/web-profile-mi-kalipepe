@@ -3,7 +3,7 @@
  * 
  */
 class M_app extends CI_Model{
-	// Jabatan Model
+	// ============== Jabatan Model ==============
 	function input_jabatan($data,$table){//create jabatan
 		$this->db->insert($table,$data);
 	}
@@ -19,6 +19,10 @@ class M_app extends CI_Model{
 		$this->db->delete($table);       
     }
 
+    // ============== Jenjang Model ==============
+    function read_jenjangpendidikan(){//read jejangpendidikan
+        return $this->db->get('tb_pendidikan');         
+    }
 
 }
  ?>

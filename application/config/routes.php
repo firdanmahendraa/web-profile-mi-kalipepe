@@ -63,4 +63,4 @@ $route['news'] = 'backend/news';
 $route['data-guru'] = 'backend/data_guru';
 $route['data-mapel'] = 'backend/data_mapel';
 $route['data-jabatan'] = 'backend/data_jabatan';
-$route['data-kategori'] = 'backend/data_kategori';
+$route['data-jenjang'] = 'backend/data_jenjang';

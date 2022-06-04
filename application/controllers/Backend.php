@@ -39,6 +39,7 @@ class Backend extends CI_Controller {
 	}
 
 	// Setting
+	// ============== Data Jabatan ==============
 	function tambah_jabatan(){//create jabatan
 		$nama_jabatan = $this->input->post('nama_jabatan');
  
@@ -67,14 +68,16 @@ class Backend extends CI_Controller {
 		$this->m_app->update_jabatan($id,$data);
 		redirect('data-jabatan');
 	}
-	function hapus_jabatan($id){
+	function hapus_jabatan($id){//delete jabatan
 		$where = array('id_jabatan' => $id);
 		$this->m_app->delete_jabatan($where,'tb_jabatan');
 		redirect('data-jabatan');
     }
 
-	public function data_kategori()	{
-		$this->template->views('admin/data_kategori');
+    // ============== Data Jabatan ==============
+	public function data_jenjang()	{//read jenjang
+		$data['jenjang'] = $this->m_app->read_jenjangpendidikan()->result();
+		$this->template->views('admin/data_jenjang',$data);
 	}
 
 }
