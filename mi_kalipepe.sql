@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2022 at 11:48 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.3.31
+-- Waktu pembuatan: 04 Jun 2022 pada 09.41
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_guru`
+-- Struktur dari tabel `tb_guru`
 --
 
 CREATE TABLE `tb_guru` (
@@ -34,13 +34,14 @@ CREATE TABLE `tb_guru` (
   `id_jabatan` int(11) NOT NULL,
   `id_pendidikan` int(11) NOT NULL,
   `pendidikan_terakhir` int(11) NOT NULL,
+  `id_mapel` int(11) NOT NULL,
   `foto_guru` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_jabatan`
+-- Struktur dari tabel `tb_jabatan`
 --
 
 CREATE TABLE `tb_jabatan` (
@@ -48,10 +49,40 @@ CREATE TABLE `tb_jabatan` (
   `nama_jabatan` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `tb_jabatan`
+--
+
+INSERT INTO `tb_jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
+(1, 'Kepalah Sekolah'),
+(2, 'Bendahara'),
+(3, 'Kurikulum'),
+(4, 'Guru Pengajar'),
+(5, 'Tata Usaha');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pendidikan`
+-- Struktur dari tabel `tb_mapel`
+--
+
+CREATE TABLE `tb_mapel` (
+  `id_mapel` int(11) NOT NULL,
+  `mata_pelajaran` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_mapel`
+--
+
+INSERT INTO `tb_mapel` (`id_mapel`, `mata_pelajaran`) VALUES
+(1, 'Matematika'),
+(2, 'Bahasa Indonesia');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_pendidikan`
 --
 
 CREATE TABLE `tb_pendidikan` (
@@ -60,7 +91,7 @@ CREATE TABLE `tb_pendidikan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tb_pendidikan`
+-- Dumping data untuk tabel `tb_pendidikan`
 --
 
 INSERT INTO `tb_pendidikan` (`id_pendidikan`, `jenjang_pendidikan`) VALUES
@@ -79,7 +110,7 @@ INSERT INTO `tb_pendidikan` (`id_pendidikan`, `jenjang_pendidikan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_login`
+-- Struktur dari tabel `user_login`
 --
 
 CREATE TABLE `user_login` (
@@ -89,7 +120,7 @@ CREATE TABLE `user_login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_login`
+-- Dumping data untuk tabel `user_login`
 --
 
 INSERT INTO `user_login` (`id`, `user_name`, `user_password`) VALUES
@@ -101,69 +132,83 @@ INSERT INTO `user_login` (`id`, `user_name`, `user_password`) VALUES
 --
 
 --
--- Indexes for table `tb_guru`
+-- Indeks untuk tabel `tb_guru`
 --
 ALTER TABLE `tb_guru`
   ADD PRIMARY KEY (`id_guru`),
   ADD KEY `id_jabatan` (`id_jabatan`,`id_pendidikan`),
-  ADD KEY `id_pendidikan` (`id_pendidikan`);
+  ADD KEY `id_pendidikan` (`id_pendidikan`),
+  ADD KEY `id_mapel` (`id_mapel`);
 
 --
--- Indexes for table `tb_jabatan`
+-- Indeks untuk tabel `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
   ADD PRIMARY KEY (`id_jabatan`);
 
 --
--- Indexes for table `tb_pendidikan`
+-- Indeks untuk tabel `tb_mapel`
+--
+ALTER TABLE `tb_mapel`
+  ADD PRIMARY KEY (`id_mapel`);
+
+--
+-- Indeks untuk tabel `tb_pendidikan`
 --
 ALTER TABLE `tb_pendidikan`
   ADD PRIMARY KEY (`id_pendidikan`);
 
 --
--- Indexes for table `user_login`
+-- Indeks untuk tabel `user_login`
 --
 ALTER TABLE `user_login`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tb_guru`
+-- AUTO_INCREMENT untuk tabel `tb_guru`
 --
 ALTER TABLE `tb_guru`
   MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_jabatan`
+-- AUTO_INCREMENT untuk tabel `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
-  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tb_pendidikan`
+-- AUTO_INCREMENT untuk tabel `tb_mapel`
+--
+ALTER TABLE `tb_mapel`
+  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_pendidikan`
 --
 ALTER TABLE `tb_pendidikan`
-  MODIFY `id_pendidikan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_pendidikan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `user_login`
+-- AUTO_INCREMENT untuk tabel `user_login`
 --
 ALTER TABLE `user_login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `tb_guru`
+-- Ketidakleluasaan untuk tabel `tb_guru`
 --
 ALTER TABLE `tb_guru`
   ADD CONSTRAINT `tb_guru_ibfk_1` FOREIGN KEY (`id_jabatan`) REFERENCES `tb_jabatan` (`id_jabatan`),
-  ADD CONSTRAINT `tb_guru_ibfk_2` FOREIGN KEY (`id_pendidikan`) REFERENCES `tb_pendidikan` (`id_pendidikan`);
+  ADD CONSTRAINT `tb_guru_ibfk_2` FOREIGN KEY (`id_pendidikan`) REFERENCES `tb_pendidikan` (`id_pendidikan`),
+  ADD CONSTRAINT `tb_guru_ibfk_3` FOREIGN KEY (`id_mapel`) REFERENCES `tb_mapel` (`id_mapel`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
