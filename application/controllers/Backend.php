@@ -34,8 +34,34 @@ class Backend extends CI_Controller {
 	}
 
 	// Menu
+	// ============== Data Guru ==============
+	public function tambah_guru(){
+		$config['upload_path']          = './assets/foto/fotoguru';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['max_size']             = 10000000;
+        $config['max_width']            = 10000000;
+        $config['max_height']           = 10000000;
+
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);  
+
+        if ($this->upload->do_upload('foto_guru')){
+            $this->m_app->create_guru();
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+            berhasil di simpan
+          </div>');
+            redirect('data-guru');
+        }else{
+            print_r($this->upload->display_errors());
+            die;
+        }
+    }
 	public function data_guru()	{
-		$this->template->views('admin/data_guru');
+		$data['jenjang'] = $this->m_app->read_jenjangpendidikan()->result();
+		$data['jabatan'] = $this->m_app->read_datajabatan()->result();
+		$data['mapel'] = $this->m_app->read_mapel()->result();		
+		$data['guru'] = $this->m_app->read_guru();
+		$this->template->views('admin/data_guru',$data);
 	}
 
 	// Setting
