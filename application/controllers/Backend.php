@@ -12,14 +12,49 @@ class Backend extends CI_Controller {
 		
 	}
 
-	public function index()	{
+	public function index()	{	
 		$this->template->views('admin/dashboard');
 	}
 
 	// CMS
+	// ============== Carausel ==============
+	public function tambah_carousel(){
+		$config['upload_path']          = './assets/foto/carousel';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['max_size']             = 10000000;
+        $config['max_width']            = 10000000;
+        $config['max_height']           = 10000000;
+
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);  
+
+        if ( ! $this->upload->do_upload('gambar')){
+            print_r($this->upload->display_errors());
+            die;
+        }else{
+            $gambar 		= $this->upload->data();
+            $gambar 		= $gambar['file_name'];
+            $headline 	= $this->input->post('headline', TRUE);
+            $deskripsi 	= $this->input->post('deskripsi', TRUE);
+            $status 		= $this->input->post('status', TRUE);
+
+            $data = array(
+            	'gambar' => $gambar,
+            	'headline' => $headline,
+            	'deskripsi' => $deskripsi,
+            	'status' => $status
+            );
+            $this->db->insert('tb_carousel', $data);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+            	Data Berhasil Disimpan!</div>');
+            redirect('carousel');
+        }
+    }
 	public function carousel()	{
-		$this->template->views('admin/carousel');
+		$data['carousel'] = $this->m_app->read_carousel()->result();
+		$this->template->views('admin/carousel',$data);
 	}
+
 	public function profile()	{
 		$this->template->views('admin/profile');
 	}

@@ -3,6 +3,13 @@
  * 
  */
 class M_app extends CI_Model{
+    // ============== Carausel Model ==============
+    function read_carousel(){//read mapel
+        return $this->db->get('tb_carousel');         
+    }
+
+
+
     // ============== Guru Model ==============
     public function create_guru(){//create guru
         $foto_guru      = $this->upload->data();
