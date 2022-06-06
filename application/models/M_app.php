@@ -4,6 +4,21 @@
  */
 class M_app extends CI_Model{
     // ============== Carausel Model ==============
+    public function create_carousel(){//create guru
+        $gambar      = $this->upload->data();
+        $gambar      = $gambar['file_name'];
+        $headline      = $this->input->post('headline', TRUE);
+        $deskripsi       = $this->input->post('deskripsi', TRUE);
+        $status             = $this->input->post('status', TRUE);
+
+        $data = array(
+            'headline' => $headline,
+            'deskripsi' => $deskripsi,
+            'status' => $status,
+            'gambar' => $gambar
+        );
+        $this->db->insert('tb_carousel', $data);
+    }
     function read_carousel(){//read mapel
         return $this->db->get('tb_carousel');         
     }
@@ -43,6 +58,12 @@ class M_app extends CI_Model{
         $query = $this->db->get();
         return $query->result();      
     }
+
+    // ============== Galeri Model ==============
+    function read_galeri(){//read mapel
+        return $this->db->get('tb_galeri');         
+    }
+
 
 	// ============== Jabatan Model ==============
 	function input_jabatan($data,$table){//create jabatan

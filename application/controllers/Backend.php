@@ -28,26 +28,15 @@ class Backend extends CI_Controller {
         $this->load->library('upload', $config);
         $this->upload->initialize($config);  
 
-        if ( ! $this->upload->do_upload('gambar')){
+        if ($this->upload->do_upload('gambar')){
+            $this->m_app->create_carousel();
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+            berhasil di simpan
+          </div>');
+            redirect('carousel');
+        }else{
             print_r($this->upload->display_errors());
             die;
-        }else{
-            $gambar 		= $this->upload->data();
-            $gambar 		= $gambar['file_name'];
-            $headline 	= $this->input->post('headline', TRUE);
-            $deskripsi 	= $this->input->post('deskripsi', TRUE);
-            $status 		= $this->input->post('status', TRUE);
-
-            $data = array(
-            	'gambar' => $gambar,
-            	'headline' => $headline,
-            	'deskripsi' => $deskripsi,
-            	'status' => $status
-            );
-            $this->db->insert('tb_carousel', $data);
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
-            	Data Berhasil Disimpan!</div>');
-            redirect('carousel');
         }
     }
 	public function carousel()	{
@@ -61,16 +50,51 @@ class Backend extends CI_Controller {
 	public function prestasi()	{
 		$this->template->views('admin/prestasi');
 	}
-	public function galeri()	{
-		$this->template->views('admin/galeri');
+
+	// ============== Galeri ==============
+	public function tambah_galeri(){//create galeri
+		$config['upload_path']          = './assets/foto/fotogaleri';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['max_size']             = 10000000;
+        $config['max_width']            = 10000000;
+        $config['max_height']           = 10000000;
+
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);  
+
+        if ( ! $this->upload->do_upload('gambar')){
+            
+            print_r($this->upload->display_errors());
+            die;
+        }else{
+            $foto_gl 		= $this->upload->data();
+            $foto_gl 		= $foto_gl['file_name'];
+            $judul_gl 	= $this->input->post('judul_gl', TRUE);
+            $tanggal_gl 	= $this->input->post('tanggal_gl', TRUE);
+
+            $data = array(
+            	'judul' => $judul_gl,
+            	'tanggal_gl' => $tanggal_gl,
+            	'gambar' => $foto_gl
+            );
+            $this->db->insert('tb_galeri', $data);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+            	Data Berhasil Disimpan!</div>');
+            redirect('galeri');
+        }
+    }
+	public function galeri(){//read galeri
+		$data['galeri'] = $this->m_app->read_galeri()->result();
+		$this->template->views('admin/galeri',$data);
 	}
+
 	public function news()	{
 		$this->template->views('admin/news');
 	}
 
 	// Menu
 	// ============== Data Guru ==============
-	public function tambah_guru(){
+	public function tambah_guru(){//create guru
 		$config['upload_path']          = './assets/foto/fotoguru';
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
         $config['max_size']             = 10000000;
@@ -91,7 +115,7 @@ class Backend extends CI_Controller {
             die;
         }
     }
-	public function data_guru()	{
+	public function data_guru()	{//read guru
 		$data['jenjang'] = $this->m_app->read_jenjangpendidikan()->result();
 		$data['jabatan'] = $this->m_app->read_datajabatan()->result();
 		$data['mapel'] = $this->m_app->read_mapel()->result();		
