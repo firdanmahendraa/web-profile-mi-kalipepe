@@ -238,11 +238,12 @@
           <div class="col-6 col-lg-2">
             <h3 class="footer-heading">Navigasi</h3>
             <ul class="footer-links list-unstyled">
-              <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
-              <li><a href="category.html"><i class="bi bi-chevron-right"></i> Categories</a></li>
-              <li><a href="single-post.html"><i class="bi bi-chevron-right"></i> Single Post</a></li>
-              <li><a href="about.html"><i class="bi bi-chevron-right"></i> About us</a></li>
-              <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact</a></li>
+              <li><a href="<?php echo base_url('home') ?>"><i class="bi bi-chevron-right"></i> Home</a></li>
+              <li><a href="<?php echo base_url('profile') ?>"><i class="bi bi-chevron-right"></i> Profile Sekolah</a></li>
+              <li><a href="<?php echo base_url('tenaga-pendidik') ?>"><i class="bi bi-chevron-right"></i> Tenaga Pendidik</a></li>
+              <li><a href="<?php echo base_url('prestasi') ?>"><i class="bi bi-chevron-right"></i> Prestasi</a></li>
+              <li><a href="<?php echo base_url('berita') ?>"><i class="bi bi-chevron-right"></i> Berita</a></li>
+              <li><a href="<?php echo base_url('kontak') ?>"><i class="bi bi-chevron-right"></i> Contact</a></li>
             </ul>
           </div>
         </div>

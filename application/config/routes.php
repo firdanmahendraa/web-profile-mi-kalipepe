@@ -53,19 +53,23 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['p-prestasi'] = 'home/prestasi';
-$route['p-tenaga-pendidik'] = 'home/tenaga_pendidik';
-$route['p-galeri'] = 'home/galeri';
+$route['profile'] = 'home/profile';
+$route['tenaga-pendidik'] = 'home/tenaga_pendidik';
+$route['prestasi'] = 'home/prestasi';
+$route['prestasi-detail'] = 'home/prestasi_detail';
 $route['berita'] = 'home/berita';
 $route['berita-detail'] = 'home/berita_detail';
+$route['galeri'] = 'home/galeri';
+$route['berita-detail'] = 'home/berita_detail';
+$route['kontak'] = 'home/kontak';
 
 $route['login'] = 'login';
 $route['dashboard'] = 'backend';
 $route['carousel'] = 'backend/carousel';
-$route['profile'] = 'backend/profile';
-$route['prestasi'] = 'backend/prestasi';
-$route['galeri'] = 'backend/galeri';
-$route['news'] = 'backend/news';
+$route['profile/p'] = 'backend/profile';
+$route['prestasi/p'] = 'backend/prestasi';
+$route['galeri/p'] = 'backend/galeri';
+$route['bertia/p'] = 'backend/news';
 
 $route['data-guru'] = 'backend/data_guru';
 $route['data-mapel'] = 'backend/data_mapel';

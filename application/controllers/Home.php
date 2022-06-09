@@ -23,9 +23,21 @@ class Home extends CI_Controller {
 		$this->load->view('index',$data);
 	}
 
-	public function tenagapendidik(){
-		$data['guru'] = $this->m_guru->read_guru();
-		$this->load->view('tenaga_pendidik',$data);
+	public function profile(){
+		// $data['galeri'] = $this->m_app->read_galeri()->result();
+		$this->load->view('profile');
+	}
+	public function tenaga_pendidik(){
+		// $data['guru'] = $this->m_guru->read_guru();
+		$this->load->view('tenaga_pendidik');
+	}
+	public function prestasi(){
+		// $data['galeri'] = $this->m_app->read_galeri()->result();
+		$this->load->view('prestasi');
+	}
+	public function prestas_detail(){
+		// $data['galeri'] = $this->m_app->read_galeri()->result();
+		$this->load->view('prestas-detail');
 	}
 	public function berita(){
 		// $data['galeri'] = $this->m_app->read_galeri()->result();
@@ -39,5 +51,13 @@ class Home extends CI_Controller {
 		$data['galeri'] = $this->m_app->read_galeri()->result();
 		$this->load->view('galeri',$data);
 	}
-	
+	public function galeri_detail(){
+		// $data['galeri'] = $this->m_app->read_galeri()->result();
+		$this->load->view('galeri-detail');
+	}
+	public function kontak(){
+		// $data['galeri'] = $this->m_app->read_galeri()->result();
+		$this->load->view('kontak');
+	}
+
 } 

@@ -11,28 +11,23 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="<?php echo base_url('home') ?>">Home</a></li>
-          <li><a href="<?php echo base_url('berita') ?>">Berita</a></li>
-          <li><a href="single-post.html">Single Post</a></li>
-          <li class="dropdown mx-2 js-search-open"><a href="category.html"><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <input type="hidden" class=" js-search-open" name="">
+          <li class="dropdown mx-2"><a href=""><span>Profile</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="search-result.html">Search Result</a></li>
-              <li><a href="#">Drop Down 1</a></li>
+              <li><a href="<?php echo base_url('profile') ?>">Profile Sekolah</a></li>
+              <li><a href="<?php echo base_url('tenaga-pendidik') ?>">Tenaga Pendidik</a></li>
+              <li><a href="#">Drop Down 3</a></li>
               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
                   <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
                 </ul>
               </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="<?php echo base_url('prestasi') ?>">Prestasi</a></li>
+          <li><a href="<?php echo base_url('berita') ?>">Berita</a></li>
+          <li><a href="<?php echo base_url('kontak') ?>">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
