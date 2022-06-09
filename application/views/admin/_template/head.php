@@ -20,5 +20,5 @@
   <!-- summernote -->
   <link rel="stylesheet" href="<?php echo base_url('assets/admin/plugins/summernote/summernote-bs4.min.css') ?>">
 
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/main/style.css') ?>">    
+  <link rel="stylesheet" href="<?php echo base_url('assets/admin/style.css') ?>">    
 </head>
