@@ -27,6 +27,14 @@ class Home extends CI_Controller {
 		$data['guru'] = $this->m_guru->read_guru();
 		$this->load->view('tenaga_pendidik',$data);
 	}
+	public function berita(){
+		// $data['galeri'] = $this->m_app->read_galeri()->result();
+		$this->load->view('berita');
+	}
+	public function berita_detail(){
+		// $data['galeri'] = $this->m_app->read_galeri()->result();
+		$this->load->view('berita-detail');
+	}
 	public function galeri(){
 		$data['galeri'] = $this->m_app->read_galeri()->result();
 		$this->load->view('galeri',$data);

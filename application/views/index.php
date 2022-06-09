@@ -4,97 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>MI Muhammadiyah Kalipepe</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="<?php echo base_url('assets/main/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
-  <link href="<?php echo base_url('assets/main/vendor/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
-  <link href="<?php echo base_url('assets/main/vendor/swiper/swiper-bundle.min.css') ?>" rel="stylesheet">
-  <link href="<?php echo base_url('assets/main/vendor/glightbox/css/glightbox.min.css') ?>" rel="stylesheet">
-  <link href="<?php echo base_url('assets/main/vendor/aos/aos.css') ?>" rel="stylesheet">
-
-  <!-- Template Main CSS Files -->
-  <link href="<?php echo base_url('assets/main/css/variables.css') ?>" rel="stylesheet">
-  <link href="<?php echo base_url('assets/main/css/main.css') ?>" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: ZenBlog - v1.0.0
-  * Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
-  * Author: BootstrapMade.com
-  * License: https:///bootstrapmade.com/license/
-  ======================================================== -->
+  <?php $this->load->view('_template/head') ?>
 </head>
 
 <body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <div class="brand">
-        <img src="assets/logo.png" width="50" height="50">
-        <div class="brand-name">
-         <h1>MI MUHAMMADIYAH KALIPEPE</h1>
-         <h3>Berani beda, selangkah lebih maju</h3>
-        </div>
-      </div> 
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="single-post.html">Single Post</a></li>
-          <li class="dropdown mx-2 js-search-open"><a href="category.html"><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="search-result.html">Search Result</a></li>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav><!-- .navbar -->
-
-      <div class="position-relative">
-        <i class="bi bi-list mobile-nav-toggle"></i>
-
-        <!-- ======= Search Form ======= -->
-        <div class="search-form-wrap js-search-form-wrap">
-          <form action="search-result.html" class="search-form">
-            <span class="icon bi-search"></span>
-            <input type="text" placeholder="Search" class="form-control">
-            <button class="btn js-search-close"><span class="bi-x"></span></button>
-          </form>
-        </div><!-- End Search Form -->
-
-      </div>
-
-    </div>
-
-  </header><!-- End Header -->
+  <?php $this->load->view('_template/header') ?>
 
   <main id="main">
 
@@ -267,12 +184,12 @@
             </div>
           </div>
           <div class="col-md-8">
+            <h3><a href="single-post.html">Judul Prestasi</a></h3>
             <div class="post-meta">
               <span class="date">Culture</span> 
               <span class="mx-1">&bullet;</span> 
               <span>Jul 5th '22</span>
             </div>
-            <h3><a href="single-post.html">Judul Prestasi</a></h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente, laudantium dolorum itaque libero eos deleniti?</p>
           </div>
           <div class="col-md-4">
@@ -283,12 +200,12 @@
             </div>
           </div>
           <div class="col-md-8">
+            <h3><a href="single-post.html">Judul Prestasi</a></h3>
             <div class="post-meta">
               <span class="date">Culture</span> 
               <span class="mx-1">&bullet;</span> 
               <span>Jul 5th '22</span>
             </div>
-            <h3><a href="single-post.html">Judul Prestasi</a></h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente, laudantium dolorum itaque libero eos deleniti?</p>
           </div>
         </div>
@@ -299,10 +216,8 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
-
     <div class="footer-content">
       <div class="container">
-
         <div class="row g-5">
           <div class="col-lg-4">
             <div class="brand">
@@ -349,16 +264,7 @@
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="<?php echo base_url('assets/main/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-  <script src="<?php echo base_url('assets/main/vendor/swiper/swiper-bundle.min.js') ?>"></script>
-  <script src="<?php echo base_url('assets/main/vendor/glightbox/js/glightbox.min.js') ?>"></script>
-  <script src="<?php echo base_url('assets/main/vendor/aos/aos.js') ?>"></script>
-  <script src="<?php echo base_url('assets/main/vendor/php-email-form/validate.js') ?>"></script>
-
-  <!-- Template Main JS File -->
-  <script src="<?php echo base_url('assets/main/js/main.js') ?>"></script>
-
+  <?php $this->load->view('_template/js') ?>
 </body>
 
 </html>

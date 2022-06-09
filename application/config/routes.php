@@ -56,7 +56,8 @@ $route['translate_uri_dashes'] = FALSE;
 $route['p-prestasi'] = 'home/prestasi';
 $route['p-tenaga-pendidik'] = 'home/tenaga_pendidik';
 $route['p-galeri'] = 'home/galeri';
-$route['p-berita'] = 'home/berita';
+$route['berita'] = 'home/berita';
+$route['berita-detail'] = 'home/berita_detail';
 
 $route['login'] = 'login';
 $route['dashboard'] = 'backend';
