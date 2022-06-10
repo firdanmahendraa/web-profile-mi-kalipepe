@@ -6,12 +6,11 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
+<script src="<?php echo base_url('assets/main/vendor/glightbox/js/glightbox.min.js') ?>"></script>
 <!-- Bootstrap 4 -->
 <script src="<?php echo base_url('assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 <!-- ChartJS -->
 <script src="<?php echo base_url('assets/admin/plugins/chart.js/Chart.min.js') ?>"></script>
-<!-- Sparkline -->
-<!-- <script src="<?php echo base_url('assets/admin/plugins/sparklines/sparkline.js') ?>"></script> -->
 <!-- JQVMap -->
 <script src="<?php echo base_url('assets/admin/plugins/jqvmap/jquery.vmap.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/admin/plugins/jqvmap/maps/jquery.vmap.usa.js') ?>"></script>

@@ -48,7 +48,7 @@
                     <th>Aksi</th>
                   </tr>
                   <?php $no=1;
-                  foreach ($guru as $g): ?>
+                  foreach ($struktur as $g): ?>
                 </thead>
                 <tbody id="data">
                   <tr>

@@ -55,11 +55,14 @@
                     <td><?php echo $no++; ?></td>
                     <td><?php echo $g->nama_guru ?></td>
                     <td><?php echo $g->nip_guru ?></td>
-                    <td><?php echo $g->nama_jabatan ?></td>
+                    <td><?php echo $g->jabatan_guru ?></td>
                     <td><?php echo $g->mata_pelajaran ?></td>
                     <td><?php echo $g->jenjang_pendidikan ?></td>
                     <td><?php echo $g->pendidikan_terakhir ?></td>
-                    <td><img src="<?php echo base_url().'assets/foto/fotoguru/'.$g->foto_guru ?>" width="100">
+                    <td>
+                      <a class="gallery-lightbox" href="<?php echo base_url().'assets/foto/fotoguru/'.$g->foto_guru ?>">
+                        <img src="<?php echo base_url().'assets/foto/fotoguru/'.$g->foto_guru ?>" width="50">
+                      </a>
                     </td>
                     <td align="center">
                       <button class="btn btn-warning" style="color: #ffff" data-toggle="modal" data-target="#edit-guru<?php echo $g->id_guru;?>"><i class="fas fa-edit"></i></button>
@@ -106,12 +109,7 @@
               </div>
               <div class="form-group">
                 <label>Jabatan</label>
-                <select name="id_jabatan" type="text" class="custom-select">
-                  <option>Pilih Jabatan</option>
-                  <?php foreach($jabatan as $j): ?>
-                  <option value="<?= $j->id_jabatan ?>"><?php echo $j->nama_jabatan ?></option>
-                  <?php endforeach ?>
-                </select>
+                <input type="text" name="jabatan_guru" class="form-control" value="Guru Pengajar" required readonly>
               </div>
               <div class="form-group" align="right">
                 <label>( 4 x 6 )</label>
@@ -129,7 +127,7 @@
               <div class="form-group">
                 <label>Mata Pelajaran</label>
                 <select name="id_mapel" type="text" class="custom-select">
-                  <option>Pilih Mata Pelajaran</option>
+                  <option>Pilih M2ata Pelajaran</option>
                   <?php foreach($mapel as $j): ?>
                   <option value="<?= $j->id_mapel ?>"><?php echo $j->mata_pelajaran ?></option>
                   <?php endforeach ?>
@@ -192,12 +190,7 @@
               </div>
               <div class="form-group">
                 <label>Jabatan</label>
-                <select name="id_jabatan" type="text" class="custom-select" value="<?php echo $ssw->jabatan;?>">
-                  <option>Pilih Jabatan</option>
-                  <?php foreach($jabatan as $j): ?>
-                  <option value="<?= $j->id_jabatan ?>"><?php echo $j->nama_jabatan ?></option>
-                  <?php endforeach ?>
-                </select>
+                <input type="text" name="jabatan_guru" class="form-control" value="Guru Pengajar" required readonly>
               </div>
               <div class="form-group" align="right">
                 <label>( 4 x 6 )</label><br>

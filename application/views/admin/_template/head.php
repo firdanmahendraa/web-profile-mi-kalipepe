@@ -3,6 +3,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Dashboard</title>
 
+  <link rel="stylesheet" href="<?php echo base_url('assets/main/vendor/glightbox/css/glightbox.min.css') ?>" >  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?php echo base_url('assets/admin/plugins/fontawesome-free/css/all.min.css')?>">
   <!-- Tempusdominus Bootstrap 4 -->

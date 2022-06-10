@@ -95,7 +95,8 @@ class Backend extends CI_Controller {
 	// Menu
 	// ============== Data Struktur ==============
 	public function data_struktur()	{//read guru
-		$this->template->views('admin/data_struktur');
+		$data['struktur'] = $this->m_app->read_struktur();
+		$this->template->views('admin/data_struktur',$data);
 	}
 
 	// ============== Data Guru ==============
@@ -122,11 +123,77 @@ class Backend extends CI_Controller {
     }
 	public function data_guru()	{//read guru
 		$data['jenjang'] = $this->m_app->read_jenjangpendidikan()->result();
-		$data['jabatan'] = $this->m_app->read_datajabatan()->result();
 		$data['mapel'] = $this->m_app->read_mapel()->result();		
 		$data['guru'] = $this->m_app->read_guru();
 		$this->template->views('admin/data_guru',$data);
 	}
+	public function edit_guru(){//update guru
+        $id= $this->input->post('id');
+        $config['upload_path']          = './assets/foto/fotoguru';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['max_size']             = 5128;
+        $config['max_width']            = 10000000;
+        $config['max_height']           = 10000000;
+            $nama_guru 				= $this->input->post('nama_guru', TRUE);
+            $nip_guru 				= $this->input->post('nip_guru', TRUE);
+            $jabatan_guru 			= $this->input->post('jabatan_guru', TRUE);
+            $id_pendidikan			= $this->input->post('id_pendidikan', TRUE);
+            $pendidikan_terakhir 	= $this->input->post('pendidikan_terakhir', TRUE);
+            $id_mapel 				= $this->input->post('id_mapel', TRUE);
+
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);  
+
+        if ($this->upload->do_upload('foto_guru')){
+            $foto_guru 		= $this->upload->data();
+            $foto_guru 		= $foto_guru['file_name'];
+            $data = array(
+            	'nama_guru' => $nama_guru,
+            	'nip_guru' => $nip_guru,
+            	'jabatan_guru' => $jabatan_guru,
+            	'id_pendidikan' => $id_pendidikan,
+            	'pendidikan_terakhir' => $pendidikan_terakhir,
+            	'id_mapel' => $id_mapel,
+            	'foto_guru' => $foto_guru
+            );
+            
+            $old_image = $data['id_guru']['foto_guru'];
+            if ($old_image != null){
+                unlink(FCPATH . 'assets/foto/fotoguru/' . $old_image);
+            }
+            
+            // $new_image = $this->upload->data('file_name');
+            // $this->db->set('foto_guru',$new_image);
+
+
+            $this->m_app->update_guru($id,$data);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">berhasil di simpan</div>');
+            redirect('data-guru');
+                        
+        }else{
+            $data = array(
+            	'nama_guru' => $nama_guru,
+            	'nip' => $nip,
+            	'tempat_lahir' => $tempat_lahir,
+            	'tgl_lahir' => $tgl_lahir,
+            	'id_jabatan' => $id_jabatan,
+            	'pendidikan' => $pendidikan,
+            );
+
+            $this->m_app->edit_guru($id,$data);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+            berhasil di simpan
+          </div>');
+            redirect('dataguru');
+        }
+     }
+    public function hapus_guru($id,$foto){//delete guru
+        $id_guru = $id;
+        $foto_guru = $foto;
+       
+        $this->m_app->delete_guru($id_guru, $foto_guru);
+        redirect ('data-guru');
+    }
 
 	// Setting
 	// ============== Data Jabatan ==============
