@@ -231,8 +231,8 @@
             <h3 class="footer-heading">KONTAK KAMI</h3>
             <p>Jl. Mayjen soekertiyo Gg. Masjid Baiturrahman Kalipepe, kec. Yosowilangun kab. Lumajang - 67382</p>
             <ul class="footer-links list-unstyled">
-              <li><i class="fas fa-phone"></i> +62 852-3620-3088</li>
-              <li><i class="fas fa-envelope"></i> mimuhammadiyahkalipepe2017@gmail.com</li>
+              <li><i class="bi bi-phone"></i> +62 852-3620-3088</li>
+              <li><i class="bi bi-envelope"></i> mimuhammadiyahkalipepe2017@gmail.com</li>
             </ul>
           </div>
           <div class="col-6 col-lg-2">
