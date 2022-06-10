@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>MI Muhammadiyah Kalipepe - Berita</title>
+  <title>MI Muhammadiyah Kalipepe - Prestasi</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <?php $this->load->view('_template/head') ?>
@@ -18,7 +18,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center mb-5">
-            <h1 class="page-title">Berita</h1>
+            <h1 class="page-title">Prestasi</h1>
           </div>
         </div>
         <div class="row">
@@ -30,7 +30,7 @@
             </div>
           </div>
           <div class="col-md-8">
-            <h3><a href="<?php echo base_url('berita-detail') ?>">Judul Prestasi</a></h3>
+            <h3><a href="<?php echo base_url('prestasi-detail') ?>">Judul Prestasi</a></h3>
             <div class="post-meta">
               <span class="date">Culture</span> 
               <span class="mx-1">&bullet;</span> 

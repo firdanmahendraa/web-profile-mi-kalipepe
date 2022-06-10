@@ -16,7 +16,7 @@
             <ul>
               <li><a href="<?php echo base_url('profile') ?>">Profile Sekolah</a></li>
               <li><a href="<?php echo base_url('tenaga-pendidik') ?>">Tenaga Pendidik</a></li>
-              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="<?php echo base_url('ekskul') ?>">Ekstra Kulikuler</a></li>
               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
@@ -25,8 +25,9 @@
               </li>
             </ul>
           </li>
-          <li><a href="<?php echo base_url('prestasi') ?>">Prestasi</a></li>
           <li><a href="<?php echo base_url('berita') ?>">Berita</a></li>
+          <li><a href="<?php echo base_url('galeri') ?>">Galeri</a></li>
+          <li><a href="<?php echo base_url('prestasi') ?>">Prestasi</a></li>
           <li><a href="<?php echo base_url('kontak') ?>">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->

@@ -55,11 +55,12 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['profile'] = 'home/profile';
 $route['tenaga-pendidik'] = 'home/tenaga_pendidik';
+$route['ekskul'] = 'home/ekstra_kulikuler';
+$route['galeri'] = 'home/galeri';
 $route['prestasi'] = 'home/prestasi';
 $route['prestasi-detail'] = 'home/prestasi_detail';
 $route['berita'] = 'home/berita';
 $route['berita-detail'] = 'home/berita_detail';
-$route['galeri'] = 'home/galeri';
 $route['berita-detail'] = 'home/berita_detail';
 $route['kontak'] = 'home/kontak';
 
