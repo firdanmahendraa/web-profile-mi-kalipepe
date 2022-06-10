@@ -62,10 +62,18 @@ class M_app extends CI_Model{
         $this->db->where('id_guru',$id);
         $this->db->update('tb_guru', $data);
     }
-    public function delete_guru($id_guru, $foto_guru){
+    public function ambil_id($id_guru)
+    {
+        $data = $this->db->where(['id_guru', $id_guru])
+                         ->get('tb_guru');
+        if ($data->num_rows()>0) {
+            return $data->row();
+        }
+    }
+    public function delete_guru($id_guru){
         $this->db->where('id_guru', $id_guru);
-        $this->db->delete('tb_guru', array('id_guru' => $id_guru));
-        unlink(FCPATH."/foto/fotoguru/".$foto_guru);
+        $this->db->delete('tb_guru');
+        return TRUE;
     }
 
     // ============== Galeri Model ==============

@@ -187,11 +187,13 @@ class Backend extends CI_Controller {
             redirect('dataguru');
         }
      }
-    public function hapus_guru($id,$foto){//delete guru
-        $id_guru = $id;
-        $foto_guru = $foto;
-       
-        $this->m_app->delete_guru($id_guru, $foto_guru);
+    public function hapus_guru($id){//delete guru
+        $data = $this->m_app->ambil_id($id);
+        $path = 'assets/foto/fotoguru/';
+        @unlink($path.$data->foto_guru);
+        if ($this->m_app->delete_guru($id) ==  TRUE) {
+        	$this->session->set_flashdata('pesan', ' DATA BERHASIL DIHAPUS');
+        }
         redirect ('data-guru');
     }
 

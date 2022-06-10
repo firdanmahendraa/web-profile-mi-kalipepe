@@ -66,7 +66,9 @@
                     </td>
                     <td align="center">
                       <button class="btn btn-warning" style="color: #ffff" data-toggle="modal" data-target="#edit-guru<?php echo $g->id_guru;?>"><i class="fas fa-edit"></i></button>
-                      <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                      <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>backend/hapus_guru/<?php echo $g->id_guru; ?>>">
+                        <i class="fas fa-trash"></i>
+                      </a>  
                     </td>
                   </tr>
                 </tbody>
