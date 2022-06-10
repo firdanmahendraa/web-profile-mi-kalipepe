@@ -14,29 +14,23 @@
   <?php $this->load->view('_template/header') ?>
 
   <main id="main">
-
     <!-- ======= Hero Slider Section ======= -->
     <section id="hero-slider" class="hero-slider">
       <div class="container-fluid " data-aos="fade-in">
         <div class="row">
             <div class="swiper sliderFeaturedPosts">
               <div class="swiper-wrapper">
+                <?php foreach ($carousel as $crs) { ?>
                 <div class="swiper-slide">
-                  <a href="single-post.html" class="img-bg d-flex align-items-end" style="background-image: url('assets/main/img/post-slide-1.jpg');">
+                  <a href="single-post.html" class="img-bg d-flex align-items-end" style="background-image: url('<?php echo base_url().'assets/foto/carousel/'.$crs->gambar ?>');">
                     <div class="img-bg-inner">
-                      <h2>PPDB</h2>
-                      <p>Simak tata cara pendaftaran nya berikut!.</p>
+                      
+                      <h2><?php echo $crs->headline ?></h2>
+                      <p><?php echo $crs->deskripsi ?></p>
                     </div>
                   </a>
                 </div>
-                <div class="swiper-slide">
-                  <a href="single-post.html" class="img-bg d-flex align-items-end" style="background-image: url('assets/main/img/post-slide-2.jpg');">
-                    <div class="img-bg-inner">
-                      <h2>Size Default</h2>
-                      <p></p>
-                    </div>
-                  </a>
-                </div>
+                <?php } ?>
               </div>
               <div class="custom-swiper-button-next">
                 <span class="bi-chevron-right"></span>

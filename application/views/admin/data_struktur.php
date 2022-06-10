@@ -41,7 +41,6 @@
                     <th>Nama Lengkap</th>
                     <th>NIP</th>
                     <th width="200">Jabatan</th>
-                    <th>Mata Pelajaran</th>
                     <th width="40">Pend. Terakhir</th>
                     <th>Jurusan</th>
                     <th>Foto</th>
@@ -56,13 +55,12 @@
                     <td><?php echo $g->nama_guru ?></td>
                     <td><?php echo $g->nip_guru ?></td>
                     <td><?php echo $g->nama_jabatan ?></td>
-                    <td><?php echo $g->mata_pelajaran ?></td>
                     <td><?php echo $g->jenjang_pendidikan ?></td>
                     <td><?php echo $g->pendidikan_terakhir ?></td>
-                    <td><img src="<?php echo base_url().'assets/foto/fotoguru/'.$g->foto_guru ?>" width="100">
+                    <td><img src="<?php echo base_url().'assets/foto/fotostruktur/'.$g->foto_guru ?>" width="50">
                     </td>
                     <td align="center">
-                      <button class="btn btn-warning" style="color: #ffff" data-toggle="modal" data-target="#edit-guru<?php echo $g->id_guru;?>"><i class="fas fa-edit"></i></button>
+                      <button class="btn btn-warning" style="color: #ffff" data-toggle="modal" data-target="#edit-guru<?php echo $g->id_struktur;?>"><i class="fas fa-edit"></i></button>
                       <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
                     </td>
                   </tr>
@@ -87,7 +85,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <?php echo form_open_multipart('backend/tambah_guru'); ?>
+        <?php echo form_open_multipart('backend/tambah_struktur'); ?>
         <form>
           <div class="row">
             <div class="col-sm-6">
@@ -126,15 +124,6 @@
                 <label>Jurusan</label>
                 <input type="text" name="pendidikan_terakhir" class="form-control" required>
               </div>
-              <div class="form-group">
-                <label>Mata Pelajaran</label>
-                <select name="id_mapel" type="text" class="custom-select">
-                  <option>Pilih Mata Pelajaran</option>
-                  <?php foreach($mapel as $j): ?>
-                  <option value="<?= $j->id_mapel ?>"><?php echo $j->mata_pelajaran ?></option>
-                  <?php endforeach ?>
-                </select>
-              </div>
               <div class="form-group" id="uplaodForm">
                 <label for="exampleInputFile">Foto</label>
                 <div class="input-group">
@@ -161,7 +150,7 @@
 <!-- /.modal Tambah -->
 
 <!-- Modal Edit -->
-<?php foreach($guru as $ssw) :?>
+<!-- <?php foreach($guru as $ssw) :?> -->
 <div class="modal fade"  id="edit-guru<?php echo $ssw->id_guru;?>" >
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -246,5 +235,5 @@
   </div>
   <!-- /.modal-dialog -->
 </div>
-<?php endforeach;?>
+<!-- <?php endforeach;?> -->
 <!-- /.modal Edit -->

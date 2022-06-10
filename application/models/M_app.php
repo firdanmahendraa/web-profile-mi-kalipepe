@@ -4,7 +4,7 @@
  */
 class M_app extends CI_Model{
     // ============== Carausel Model ==============
-    public function create_carousel(){//create guru
+    function create_carousel(){//create guru
         $gambar      = $this->upload->data();
         $gambar      = $gambar['file_name'];
         $headline      = $this->input->post('headline', TRUE);
@@ -22,11 +22,55 @@ class M_app extends CI_Model{
     function read_carousel(){//read mapel
         return $this->db->get('tb_carousel');         
     }
+    function update_carousel($id,$data){//update guru
+        $this->db->where('id_carousel',$id);
+        $this->db->update('tb_carousel', $data);
+    }
+    function c($id_carousel){//get-id
+        $data = $this->db->where(['id_carousel', $id_carousel])->get('tb_carousel');
+        if ($data->num_rows()>0) {
+            return $data->row();
+        }
+    }
+    function delete_carousel($id_carousel){//delete guru
+        $this->db->where('id_carousel', $id_carousel);
+        $this->db->delete('tb_carousel');
+        return TRUE;
+    }
 
+    // ============== Struktur Model ==============
+    function create_struktur(){//create struktur
+        $foto_guru              = $this->upload->data();
+        $foto_guru              = $foto_guru['file_name'];
+        $nama_guru              = $this->input->post('nama_guru', TRUE);
+        $nip_guru               = $this->input->post('nip_guru', TRUE);
+        $id_jabatan             = $this->input->post('id_jabatan', TRUE);
+        $id_pendidikan          = $this->input->post('id_pendidikan', TRUE);
+        $pendidikan_terakhir    = $this->input->post('pendidikan_terakhir', TRUE);
 
+        $data = array(
+            'nama_guru' => $nama_guru,
+            'nip_guru' => $nip_guru,
+            'id_jabatan' => $id_jabatan,
+            'id_pendidikan' => $id_pendidikan,
+            'pendidikan_terakhir' => $pendidikan_terakhir,
+            'foto_guru' => $foto_guru
+        );
+        $this->db->insert('tb_struktur', $data);
+    }
+    function read_struktur(){//read struktur
+        $this->db->select('*');
+        $this->db->from('tb_struktur');
+        $this->db->join('tb_pendidikan','tb_pendidikan.id_pendidikan=tb_struktur.id_pendidikan');
+        $this->db->join('tb_jabatan','tb_jabatan.id_jabatan=tb_struktur.id_jabatan');
+        $this->db->order_by('id_struktur','ASC');
+
+        $query = $this->db->get();
+        return $query->result();      
+    }
 
     // ============== Guru Model ==============
-    public function create_guru(){//create guru
+    function create_guru(){//create guru
         $foto_guru              = $this->upload->data();
         $foto_guru              = $foto_guru['file_name'];
         $nama_guru              = $this->input->post('nama_guru', TRUE);
@@ -48,7 +92,7 @@ class M_app extends CI_Model{
         );
         $this->db->insert('tb_guru', $data);
     }
-    function read_guru(){//read jabatan
+    function read_guru(){//read guru
         $this->db->select('*');
         $this->db->from('tb_guru');
         $this->db->join('tb_pendidikan','tb_pendidikan.id_pendidikan=tb_guru.id_pendidikan');
@@ -58,19 +102,17 @@ class M_app extends CI_Model{
         $query = $this->db->get();
         return $query->result();      
     }
-    public function update_guru($id,$data){
+    function update_guru($id,$data){//update guru
         $this->db->where('id_guru',$id);
         $this->db->update('tb_guru', $data);
     }
-    public function ambil_id($id_guru)
-    {
-        $data = $this->db->where(['id_guru', $id_guru])
-                         ->get('tb_guru');
+    function ambil_id($id_guru){//get-id
+        $data = $this->db->where(['id_guru', $id_guru])->get('tb_guru');
         if ($data->num_rows()>0) {
             return $data->row();
         }
     }
-    public function delete_guru($id_guru){
+    function delete_guru($id_guru){//delete guru
         $this->db->where('id_guru', $id_guru);
         $this->db->delete('tb_guru');
         return TRUE;
@@ -81,10 +123,7 @@ class M_app extends CI_Model{
         return $this->db->get('tb_galeri');         
     }
 
-    // ============== Jabatan Model ==============
-    function read_struktur(){//read jabatan
-        return $this->db->get('tb_struktur');         
-    }
+
 
 	// ============== Jabatan Model ==============
 	function input_jabatan($data,$table){//create jabatan

@@ -24,12 +24,12 @@ class Home extends CI_Controller {
 	}
 
 	public function profile(){
-		// $data['galeri'] = $this->m_app->read_galeri()->result();
-		$this->load->view('profile');
+		$data['struktur'] = $this->m_app->read_struktur();
+		$this->load->view('profile',$data);
 	}
 	public function tenaga_pendidik(){
-		// $data['guru'] = $this->m_guru->read_guru();
-		$this->load->view('tenaga_pendidik');
+		$data['guru'] = $this->m_app->read_guru();
+		$this->load->view('tenaga_pendidik',$data);
 	}
 	public function ekstra_kulikuler(){
 		// $data['guru'] = $this->m_guru->read_guru();

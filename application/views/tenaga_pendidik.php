@@ -26,12 +26,14 @@
               </div>
             </div>
           </div>
+          <?php foreach ($guru as $g) {  ?>
           <div class="col-lg-4 text-center mb-5">
-            <img src="assets/main/img/person-1.jpg" alt="" class="img-fluid rounded-circle w-50 mb-4">
-            <h4>Nama Guru</h4>
-            <span class="d-block mb-3 text-uppercase">Jabatan</span>
-            <span class="d-block mb-3 text-uppercase">Pendidikan Terakhir &#45; Jurusan</span>
+            <img src="<?php echo base_url().'assets/foto/fotoguru/'.$g->foto_guru ?>" alt="" class="img-fluid rounded-circle w-50 mb-4">
+            <h4><?php echo $g->nama_guru ?></h4>
+            <span class="d-block mb-3 text-uppercase"><?php echo $g->jabatan_guru ?> &#45; <?php echo $g->mata_pelajaran ?></span>
+            <span class="d-block mb-3 text-uppercase"><?php echo $g->jenjang_pendidikan ?> &#45; <?php echo $g->pendidikan_terakhir ?></span>
           </div>
+          <?php } ?>
         </div>
       </div>
     </section>

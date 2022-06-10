@@ -43,6 +43,8 @@
                     <th>Headline</th>
                     <th>Deskripsi</th>
                     <th>Status</th>
+                    <th>Tanggal Posting</th>
+                    <th>Gambar</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -53,8 +55,13 @@
                   <td><?php echo $crs->headline ?></td>
                   <td><?php echo $crs->deskripsi ?></td>
                   <td><?php echo $crs->status ?></td>
+                  <td><?php echo $crs->tanggal_post ?></td>
                   <td>
-                    <a href="" class="btn btn-sm btn-info" onclick="preview('s')"><i class="fas fa-search-plus"></i></a>
+                    <a class="gallery-lightbox" href="<?php echo base_url().'assets/foto/carousel/'.$crs->gambar ?>">
+                      <img src="<?php echo base_url().'assets/foto/carousel/'.$crs->gambar ?>" width="50">
+                    </a>
+                  </td>
+                  <td>
                     <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-carousel<?php echo $crs->id_carousel; ?>" ><i class="fas fa-edit" style="color: #fff;"></i></a>
                     <a class="btn btn-sm btn-danger" href="" ><i class="fas fa-trash"></i></a>
                   </td>
@@ -85,6 +92,7 @@
       </div>
       <div class="modal-body">
         <?php echo form_open_multipart('backend/tambah_carousel'); ?>
+        <input type="hidden" name="tanggal_post" value="<?php echo date("Y-m-d"); ?>">
         <div class="form-group">
           <label>Gambar Postingan</label>
           <div class="custom-file">
@@ -144,7 +152,8 @@
       </div>
       <div class="modal-body">
         <?php echo form_open_multipart('backend/edit_carousel'); ?>
-              <input type="hidden" name="id_carousel" class="form-control">
+        <input type="hidden" name="id" class="form-control">
+        <input type="hidden" name="tanggal_post" value="<?php echo date("Y-m-d"); ?>">
         <div class="form-group">
           <label>Gambar Postingan</label>
           <div class="custom-file">
