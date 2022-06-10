@@ -23,14 +23,14 @@
                $this->uri->segment(1) == 'profile' || 
                $this->uri->segment(1) == 'prestasi' ||
                $this->uri->segment(1) == 'galeri' ||
-               $this->uri->segment(1) == 'news' ||
+               $this->uri->segment(1) == 'berita' ||
                $this->uri->segment(1) == '' ? 'menu-open':'' ?>">
             <a href="#" class="nav-link
             <?=$this->uri->segment(1) == 'carousel' ||
                $this->uri->segment(1) == 'profile' || 
                $this->uri->segment(1) == 'prestasi' ||
                $this->uri->segment(1) == 'galeri' ||
-               $this->uri->segment(1) == 'news' ||
+               $this->uri->segment(1) == 'berita' ||
                $this->uri->segment(1) == '' ? 'active':'' ?>">
               <i class="nav-icon fas fa-copy"></i>
               <p>Content Management
@@ -45,32 +45,38 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url('profile') ?>" class="nav-link <?=$this->uri->segment(1) == 'profile' || $this->uri->segment(1) == '' ? 'active':'' ?>">
+                <a href="<?php echo base_url('profile/p') ?>" class="nav-link <?=$this->uri->segment(1) == 'profile' || $this->uri->segment(1) == '' ? 'active':'' ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Profile</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url('prestasi') ?>" class="nav-link <?=$this->uri->segment(1) == 'prestasi' || $this->uri->segment(1) == '' ? 'active':'' ?>">
+                <a href="<?php echo base_url('prestasi/p') ?>" class="nav-link <?=$this->uri->segment(1) == 'prestasi' || $this->uri->segment(1) == '' ? 'active':'' ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Prestasi</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url('galeri') ?>" class="nav-link <?=$this->uri->segment(1) == 'galeri' || $this->uri->segment(1) == '' ? 'active':'' ?>">
+                <a href="<?php echo base_url('galeri/p') ?>" class="nav-link <?=$this->uri->segment(1) == 'galeri' || $this->uri->segment(1) == '' ? 'active':'' ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Galery</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url('news') ?>" class="nav-link <?=$this->uri->segment(1) == 'news' || $this->uri->segment(1) == '' ? 'active':'' ?>">
+                <a href="<?php echo base_url('berita/p') ?>" class="nav-link <?=$this->uri->segment(1) == 'berita' || $this->uri->segment(1) == '' ? 'active':'' ?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Hot News</p>
+                  <p>Berita</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-header">MENU</li>
+          <li class="nav-item">
+            <a href="<?php echo base_url('data-struktur') ?>" <?=$this->uri->segment(1) == 'data-struktur' || $this->uri->segment(1) == '' ? 'class="nav-link active"':'' ?> class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>Struktur Organisasi</p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="<?php echo base_url('data-guru') ?>" <?=$this->uri->segment(1) == 'data-guru' || $this->uri->segment(1) == '' ? 'class="nav-link active"':'' ?> class="nav-link">
               <i class="nav-icon fas fa-users"></i>

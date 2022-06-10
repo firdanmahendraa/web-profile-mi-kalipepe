@@ -70,8 +70,9 @@ $route['carousel'] = 'backend/carousel';
 $route['profile/p'] = 'backend/profile';
 $route['prestasi/p'] = 'backend/prestasi';
 $route['galeri/p'] = 'backend/galeri';
-$route['bertia/p'] = 'backend/news';
+$route['berita/p'] = 'backend/news';
 
+$route['data-struktur'] = 'backend/data_struktur';
 $route['data-guru'] = 'backend/data_guru';
 $route['data-mapel'] = 'backend/data_mapel';
 $route['data-jabatan'] = 'backend/data_jabatan';

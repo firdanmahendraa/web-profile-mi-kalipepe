@@ -93,6 +93,11 @@ class Backend extends CI_Controller {
 	}
 
 	// Menu
+	// ============== Data Struktur ==============
+	public function data_struktur()	{//read guru
+		$this->template->views('admin/data_struktur');
+	}
+
 	// ============== Data Guru ==============
 	public function tambah_guru(){//create guru
 		$config['upload_path']          = './assets/foto/fotoguru';
