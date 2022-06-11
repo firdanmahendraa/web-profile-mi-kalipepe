@@ -9,11 +9,14 @@ class Main_model extends CI_Model{
 //end prestasi model
 	
 //Prestasi Model
-	function getPost($limit){
-		$this->db->where('id_kategori', '2');
-		$this->db->order_by("id_post", "desc");
-		return $this->db->get('tb_post', $limit)->result();
+	function getPrestasi(){
+		$this->db->order_by("id_prestasi", "desc");
+		return $this->db->get('tb_prestasi');
 	}
+    function getPrestasiId($id_prestasi){
+        $query = $this->db->query("SELECT * FROM tb_prestasi WHERE id_prestasi='$id_prestasi'");
+        return $query->result();
+    }
 //end prestasi model
 
 //Guru Model

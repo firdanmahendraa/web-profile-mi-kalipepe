@@ -22,39 +22,25 @@
           </div>
         </div>
         <div class="row">
+          <?php foreach ($prestasi as $p) { ?>
           <div class="col-md-4">
             <div class="post-entry-2">
-              <a href="single-post.html" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
-                <img src="assets/main/img/post-landscape-6.jpg" alt="" class="img-fluid">
+              <a href="<?php echo base_url('prestasi-detail/'.$p->id_prestasi) ?>" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
+                <img src="<?php echo base_url().'assets/foto/fotoprestasi/'.$p->gambar_prestasi ?>" alt="" class="img-fluid">
               </a>
             </div>
           </div>
           <div class="col-md-8">
-            <h3><a href="<?php echo base_url('prestasi-detail') ?>">Judul Prestasi</a></h3>
+            <h3><a href="<?php echo base_url('prestasi-detail/'.$p->id_prestasi) ?>"><?php echo $p->judul_prestasi ?></a></h3>
             <div class="post-meta">
-              <span class="date">Culture</span> 
+              <span class="date"><?php echo $p->author ?></span> 
               <span class="mx-1">&bullet;</span> 
-              <span>Jul 5th '22</span>
+              <span><?php echo $p->tanggal_prestasi ?></span>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente, laudantium dolorum itaque libero eos deleniti?</p>
+            <p><?php echo substr($p->isi_prestasi,0, 200) ?> <a href="<?php echo base_url('prestasi-detail/'.$p->id_prestasi) ?>">... Baca Selengkapnya >></a></p>
           </div>
-          <div class="col-md-4">
-            <div class="post-entry-2">
-              <a href="single-post.html" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
-                <img src="assets/main/img/post-landscape-6.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <h3><a href="single-post.html">Judul Prestasi</a></h3>
-            <div class="post-meta">
-              <span class="date">Culture</span> 
-              <span class="mx-1">&bullet;</span> 
-              <span>Jul 5th '22</span>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente, laudantium dolorum itaque libero eos deleniti?</p>
-          </div>
-        </div><!-- End Row Berita -->
+          <?php } ?>
+        </div><!-- End Row prestasi -->
 
         <div class="d-md-flex post-entry-2 half">
           <div class="col-md-8"></div>

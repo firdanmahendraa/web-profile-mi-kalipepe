@@ -107,10 +107,6 @@ class Backend extends CI_Controller {
 	public function profile()	{
 		$this->template->views('admin/profile');
 	}
-	// ============== Prestasi ==============
-	public function prestasi()	{
-		$this->template->views('admin/prestasi');
-	}
 
 	// ============== Galeri ==============
 	public function tambah_galeri(){//create galeri
@@ -141,11 +137,11 @@ class Backend extends CI_Controller {
             $this->db->insert('tb_galeri', $data);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
             	Data Berhasil Disimpan!</div>');
-            redirect('galeri');
+            redirect('galeri/p');
         }
     }
 	public function galeri(){//read galeri
-		$data['galeri'] = $this->m_app->read_galeri()->result();
+		$data['galeri'] = $this->m_app->read_galeri();
 		$this->template->views('admin/galeri',$data);
 	}
 

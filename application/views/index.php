@@ -141,42 +141,27 @@
         <div class="row">
           <div class="section-header d-flex justify-content-between align-items-center mb-5">
             <h2>Prestasi</h2>
-            <div><a href="category.html" class="more">Lihat Semua Prestasi</a></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="post-entry-2">
-              <a href="single-post.html" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
-                <img src="assets/main/img/post-landscape-6.jpg" alt="" class="img-fluid">
+              <div><a href="<?php echo base_url('prestasi') ?>" class="more">Lihat Semua Berita</a></div>
+            </div>
+            <div class="row">
+              <?php foreach ($prestasi as $b) { ?>
+              <div class="col-md-5"><!-- Image -->
+                <div class=" post-entry-2">
+                  <a href="<?php echo base_url('prestasi-detail/'.$b->id_prestasi) ?>" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
+                <img src="<?php echo base_url().'assets/foto/fotoprestasi/'.$b->gambar_prestasi ?>" alt="" class="img-fluid">
               </a>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <h3><a href="single-post.html">Judul Prestasi</a></h3>
-            <div class="post-meta">
-              <span class="date">Culture</span> 
-              <span class="mx-1">&bullet;</span> 
-              <span>Jul 5th '22</span>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente, laudantium dolorum itaque libero eos deleniti?</p>
-          </div>
-          <div class="col-md-4">
-            <div class="post-entry-2">
-              <a href="single-post.html" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
-                <img src="assets/main/img/post-landscape-6.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <h3><a href="single-post.html">Judul Prestasi</a></h3>
-            <div class="post-meta">
-              <span class="date">Culture</span> 
-              <span class="mx-1">&bullet;</span> 
-              <span>Jul 5th '22</span>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente, laudantium dolorum itaque libero eos deleniti?</p>
-          </div>
+                </div>
+              </div>
+              <div class="col-md-7"><!-- Deskripsi -->
+                <h3><a href="<?php echo base_url('prestasi-detail/'.$b->id_prestasi) ?>"><?php echo $b->judul_prestasi ?></a></h3>
+                <div class="post-meta">
+                  <span class="date"><?php echo $b->author ?></span> 
+                  <span class="mx-1">&bullet;</span> 
+                  <span><?php echo $b->tanggal_prestasi ?></span>
+                </div>
+                <p><?php echo substr($b->isi_prestasi,0, 200) ?> <a href="<?php echo base_url('prestasi-detail/'.$b->id_prestasi) ?>">... Baca Selengkapnya >></a></p>
+              </div>
+              <?php } ?>
         </div>
       </div>
     </section><!-- End Culture Category Section -->

@@ -58,7 +58,7 @@ $route['tenaga-pendidik'] = 'home/tenaga_pendidik';
 $route['ekskul'] = 'home/ekstra_kulikuler';
 $route['galeri'] = 'home/galeri';
 $route['prestasi'] = 'home/prestasi';
-$route['prestasi-detail'] = 'home/prestasi_detail';
+$route['prestasi-detail/(:any)'] = 'home/prestasi_detail/$id_prestasi';
 $route['berita'] = 'home/berita';
 $route['berita-detail/(:any)'] = 'home/berita_detail/$id_berita';
 $route['kontak'] = 'home/kontak';
@@ -67,9 +67,9 @@ $route['login'] = 'login';
 $route['dashboard'] = 'backend';
 $route['carousel'] = 'backend/carousel';
 $route['profile/p'] = 'backend/profile';
-$route['prestasi/p'] = 'backend/prestasi';
 $route['galeri/p'] = 'backend/galeri';
 
+$route['prestasi/p'] = 'admin/PrestasiController';
 $route['berita/p'] = 'admin/BeritaController';
 
 $route['data-struktur'] = 'backend/data_struktur';
