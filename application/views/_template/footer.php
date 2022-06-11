@@ -8,8 +8,9 @@
               <img src="assets/logo.png" width="50" height="50">
               <h3 class="footer-heading">MI MUHAMMADIYAH <br>KALIPEPE</h3>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ab, perspiciatis beatae autem deleniti voluptate nulla a dolores, exercitationem eveniet libero laudantium recusandae officiis qui aliquid blanditiis omnis quae. Explicabo?</p>
-            <p><a href="about.html" class="footer-link-more">Learn More</a></p>
+            <?php foreach ($profile as $prfl) { ?>
+            <p><?php echo substr($prfl->deskripsi_profile, 0,306) ?><a href="<?php echo base_url('profile') ?>" class="footer-link-more">Baca Selengkapnya</a></p>
+           <?php } ?>
           </div>
           <div class="col-6 col-lg-4">
             <h3 class="footer-heading">KONTAK KAMI</h3>

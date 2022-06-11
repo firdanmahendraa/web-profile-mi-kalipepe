@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jun 2022 pada 10.06
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.4.11
+-- Generation Time: Jun 11, 2022 at 12:13 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_berita`
+-- Table structure for table `tb_berita`
 --
 
 CREATE TABLE `tb_berita` (
@@ -37,7 +37,7 @@ CREATE TABLE `tb_berita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_berita`
+-- Dumping data for table `tb_berita`
 --
 
 INSERT INTO `tb_berita` (`id_berita`, `judul_berita`, `isi_berita`, `tanggal_berita`, `gambar_berita`, `author`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `tb_berita` (`id_berita`, `judul_berita`, `isi_berita`, `tanggal_ber
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_carousel`
+-- Table structure for table `tb_carousel`
 --
 
 CREATE TABLE `tb_carousel` (
@@ -61,7 +61,7 @@ CREATE TABLE `tb_carousel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_carousel`
+-- Dumping data for table `tb_carousel`
 --
 
 INSERT INTO `tb_carousel` (`id_carousel`, `gambar`, `headline`, `deskripsi`, `status`, `tanggal_post`) VALUES
@@ -72,7 +72,7 @@ INSERT INTO `tb_carousel` (`id_carousel`, `gambar`, `headline`, `deskripsi`, `st
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_galeri`
+-- Table structure for table `tb_galeri`
 --
 
 CREATE TABLE `tb_galeri` (
@@ -83,7 +83,7 @@ CREATE TABLE `tb_galeri` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_galeri`
+-- Dumping data for table `tb_galeri`
 --
 
 INSERT INTO `tb_galeri` (`id_galeri`, `judul`, `tanggal_gl`, `gambar`) VALUES
@@ -96,7 +96,7 @@ INSERT INTO `tb_galeri` (`id_galeri`, `judul`, `tanggal_gl`, `gambar`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_guru`
+-- Table structure for table `tb_guru`
 --
 
 CREATE TABLE `tb_guru` (
@@ -111,7 +111,7 @@ CREATE TABLE `tb_guru` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_guru`
+-- Dumping data for table `tb_guru`
 --
 
 INSERT INTO `tb_guru` (`id_guru`, `nama_guru`, `nip_guru`, `jabatan_guru`, `id_pendidikan`, `pendidikan_terakhir`, `id_mapel`, `foto_guru`) VALUES
@@ -124,7 +124,7 @@ INSERT INTO `tb_guru` (`id_guru`, `nama_guru`, `nip_guru`, `jabatan_guru`, `id_p
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_jabatan`
+-- Table structure for table `tb_jabatan`
 --
 
 CREATE TABLE `tb_jabatan` (
@@ -133,7 +133,7 @@ CREATE TABLE `tb_jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_jabatan`
+-- Dumping data for table `tb_jabatan`
 --
 
 INSERT INTO `tb_jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
@@ -147,7 +147,7 @@ INSERT INTO `tb_jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_mapel`
+-- Table structure for table `tb_mapel`
 --
 
 CREATE TABLE `tb_mapel` (
@@ -156,7 +156,7 @@ CREATE TABLE `tb_mapel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_mapel`
+-- Dumping data for table `tb_mapel`
 --
 
 INSERT INTO `tb_mapel` (`id_mapel`, `mata_pelajaran`) VALUES
@@ -176,7 +176,7 @@ INSERT INTO `tb_mapel` (`id_mapel`, `mata_pelajaran`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pendidikan`
+-- Table structure for table `tb_pendidikan`
 --
 
 CREATE TABLE `tb_pendidikan` (
@@ -185,7 +185,7 @@ CREATE TABLE `tb_pendidikan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_pendidikan`
+-- Dumping data for table `tb_pendidikan`
 --
 
 INSERT INTO `tb_pendidikan` (`id_pendidikan`, `jenjang_pendidikan`) VALUES
@@ -202,7 +202,7 @@ INSERT INTO `tb_pendidikan` (`id_pendidikan`, `jenjang_pendidikan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_prestasi`
+-- Table structure for table `tb_prestasi`
 --
 
 CREATE TABLE `tb_prestasi` (
@@ -215,7 +215,7 @@ CREATE TABLE `tb_prestasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_prestasi`
+-- Dumping data for table `tb_prestasi`
 --
 
 INSERT INTO `tb_prestasi` (`id_prestasi`, `judul_prestasi`, `isi_prestasi`, `tanggal_prestasi`, `gambar_prestasi`, `author`) VALUES
@@ -226,7 +226,7 @@ INSERT INTO `tb_prestasi` (`id_prestasi`, `judul_prestasi`, `isi_prestasi`, `tan
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_profile`
+-- Table structure for table `tb_profile`
 --
 
 CREATE TABLE `tb_profile` (
@@ -238,18 +238,18 @@ CREATE TABLE `tb_profile` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_profile`
+-- Dumping data for table `tb_profile`
 --
 
 INSERT INTO `tb_profile` (`id_profile`, `id_kategori`, `judul_profile`, `deskripsi_profile`, `gambar_profile`) VALUES
-(1, 1, 'Sambutan Kepala Sekolah', '<p xss=removed>Assalamu\'alaikum wr.wb.</p><p xss=removed>Puji syukur kepada Alloh SWT, Tuhan Yang Maha Esa yang telah memberikan rahmat dan anugerahNya sehingga website MI Muhammadiyah Kalipepe ini dapat terbit. Salah satu tujuan dari website ini adalah untuk menjawab akan setiap kebutuhan informasi dengan memanfaatkan sarana teknologi informasi yang ada. Kami sadar sepenuhnya dalam rangka memajukan pendidikan di era berkembangnya Teknologi Informasi yang begitu pesat, sangat diperlukan berbagai sarana prasarana yang kondusif, kebutuhan berbagai informasi siswa, guru, orangtua maupun masyarakat, sehingga kami berusaha mewujudkan hal tersebut semaksimal mungkin. Semoga dengan adanya website ini dapat membantu dan bermanfaat, terutama informasi yang berhubungan dengan pendidikan, ilmu pengetahuan dan informasi seputar MI Muhammadiyah Kalipepe.</p><p xss=removed>Besar harapan kami, sarana ini dapat memberi manfaat bagi semua pihak yang ada dilingkup pendidikan dan pemerhati pendidikan secara khusus bagi MI Muhammadiyah Kalipepe.</p><p xss=removed>Akhirnya kami mengharapkan masukan dari berbagai pihak untuk website ini agar kami terus belajar dan meng-update diri, sehingga tampilan, isi dan mutu website akan terus berkembang dan lebih baik nantinya. Terima kasih atas kerjasamanya, maju terus untuk mencapai MI Muhammadiyah Kalipepe yang lebih baik lagi.</p><p xss=removed>Wassalamu\'alaikum wr.wb.</p><p xss=removed><br xss=removed></p><p xss=removed>Hormat kami,</p><p xss=removed>Kepala MI Muhammadiyah Kalipepe</p>', 'person-2.jpg'),
-(2, 1, 'Visi dan Misi', '“Terwujudnya Siswa Beriman dan Taqwa, Berprestasi, Berbudaya dan Berwawasan Lingkungan”. Melaksanakan pembelajaran yang inovatif, efektif dan partisipatif. Meningkatkan prestasi akademik, non akademik dan prestasi di bidang keagamaan. Meningkatkan Sumber Daya Manusia (SDM) warga sekolah.', 'logo.png'),
+(1, 1, 'Sambutan Kepala Sekolah', '<p xss=removed>Puji syukur kepada Alloh SWT, Tuhan Yang Maha Esa yang telah memberikan rahmat dan anugerahNya sehingga website MI Muhammadiyah Kalipepe ini dapat terbit. Salah satu tujuan dari website ini adalah untuk menjawab akan setiap kebutuhan informasi dengan memanfaatkan sarana teknologi informasi yang ada. Kami sadar sepenuhnya dalam rangka memajukan pendidikan di era berkembangnya Teknologi Informasi yang begitu pesat, sangat diperlukan berbagai sarana prasarana yang kondusif, kebutuhan berbagai informasi siswa, guru, orangtua maupun masyarakat, sehingga kami berusaha mewujudkan hal tersebut semaksimal mungkin. Semoga dengan adanya website ini dapat membantu dan bermanfaat, terutama informasi yang berhubungan dengan pendidikan, ilmu pengetahuan dan informasi seputar MI Muhammadiyah Kalipepe.</p><p xss=removed>Besar harapan kami, sarana ini dapat memberi manfaat bagi semua pihak yang ada dilingkup pendidikan dan pemerhati pendidikan secara khusus bagi MI Muhammadiyah Kalipepe.</p><p xss=removed>Akhirnya kami mengharapkan masukan dari berbagai pihak untuk website ini agar kami terus belajar dan meng-update diri, sehingga tampilan, isi dan mutu website akan terus berkembang dan lebih baik nantinya. Terima kasih atas kerjasamanya, maju terus untuk mencapai MI Muhammadiyah Kalipepe yang lebih baik lagi.</p><p xss=removed>Wassalamu\'alaikum wr.wb.</p><p xss=removed><br xss=removed></p><p xss=removed>Hormat kami,</p><p xss=removed>Kepala MI Muhammadiyah Kalipepe</p>', 'person-2.jpg'),
+(2, 2, 'Visi dan Misi', '“Terwujudnya Siswa Beriman dan Taqwa, Berprestasi, Berbudaya dan Berwawasan Lingkungan”. Melaksanakan pembelajaran yang inovatif, efektif dan partisipatif. Meningkatkan prestasi akademik, non akademik dan prestasi di bidang keagamaan. Meningkatkan Sumber Daya Manusia (SDM) warga sekolah.', 'logo.png'),
 (3, 3, 'Hadroh', 'Kegiatan Ekstrakulikuler hadrah adalah salah satu kegiatan di luar jam pelajaran sekolah untuk mengembangkan bakat, minat dan kreatifitas peserta didik di bidang seni terutama Seni Hadrah. Apalagi di era globalisasi ini peserta didik lebih suka main gadget dari pada berkreasi. Oleh karenanya seni hadrah ini bisa menjadi sarana untuk membatasi peserta didik untuk tetap beraktifitas dan bernilai positif.Senihadrahdapatmengembangkan psikomotorikanak,Meningkatkankreatifitasanak,menumbuhkanrasakecintaanpadabudayaIslam,menumbuhkan rasa seni dan keagamaan melalui lagu – lagu Islam, dan menumbuhkan rasacinta terhadap Nabi muhammad SAW, karna dengan musik marawis kita bisa menyampaikansolawat dan syiar islam. Mengingat besarnya manfaat dari seni hadrah, maka kegiatan Ektrakulrikuler Hadrah, sangat perlu dikembangkan di sekolah.', 'Untitled-1_copy.png');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_profil_kategori`
+-- Table structure for table `tb_profil_kategori`
 --
 
 CREATE TABLE `tb_profil_kategori` (
@@ -258,7 +258,7 @@ CREATE TABLE `tb_profil_kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_profil_kategori`
+-- Dumping data for table `tb_profil_kategori`
 --
 
 INSERT INTO `tb_profil_kategori` (`id_kategori`, `nama_kategori`) VALUES
@@ -269,7 +269,7 @@ INSERT INTO `tb_profil_kategori` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_struktur`
+-- Table structure for table `tb_struktur`
 --
 
 CREATE TABLE `tb_struktur` (
@@ -283,7 +283,7 @@ CREATE TABLE `tb_struktur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_struktur`
+-- Dumping data for table `tb_struktur`
 --
 
 INSERT INTO `tb_struktur` (`id_struktur`, `nama_guru`, `nip_guru`, `id_jabatan`, `id_pendidikan`, `pendidikan_terakhir`, `foto_guru`) VALUES
@@ -297,7 +297,7 @@ INSERT INTO `tb_struktur` (`id_struktur`, `nama_guru`, `nip_guru`, `id_jabatan`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_login`
+-- Table structure for table `user_login`
 --
 
 CREATE TABLE `user_login` (
@@ -307,7 +307,7 @@ CREATE TABLE `user_login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user_login`
+-- Dumping data for table `user_login`
 --
 
 INSERT INTO `user_login` (`id`, `user_name`, `user_password`) VALUES
@@ -319,25 +319,25 @@ INSERT INTO `user_login` (`id`, `user_name`, `user_password`) VALUES
 --
 
 --
--- Indeks untuk tabel `tb_berita`
+-- Indexes for table `tb_berita`
 --
 ALTER TABLE `tb_berita`
   ADD PRIMARY KEY (`id_berita`);
 
 --
--- Indeks untuk tabel `tb_carousel`
+-- Indexes for table `tb_carousel`
 --
 ALTER TABLE `tb_carousel`
   ADD PRIMARY KEY (`id_carousel`);
 
 --
--- Indeks untuk tabel `tb_galeri`
+-- Indexes for table `tb_galeri`
 --
 ALTER TABLE `tb_galeri`
   ADD PRIMARY KEY (`id_galeri`);
 
 --
--- Indeks untuk tabel `tb_guru`
+-- Indexes for table `tb_guru`
 --
 ALTER TABLE `tb_guru`
   ADD PRIMARY KEY (`id_guru`),
@@ -345,44 +345,44 @@ ALTER TABLE `tb_guru`
   ADD KEY `id_mapel` (`id_mapel`);
 
 --
--- Indeks untuk tabel `tb_jabatan`
+-- Indexes for table `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
   ADD PRIMARY KEY (`id_jabatan`);
 
 --
--- Indeks untuk tabel `tb_mapel`
+-- Indexes for table `tb_mapel`
 --
 ALTER TABLE `tb_mapel`
   ADD PRIMARY KEY (`id_mapel`);
 
 --
--- Indeks untuk tabel `tb_pendidikan`
+-- Indexes for table `tb_pendidikan`
 --
 ALTER TABLE `tb_pendidikan`
   ADD PRIMARY KEY (`id_pendidikan`);
 
 --
--- Indeks untuk tabel `tb_prestasi`
+-- Indexes for table `tb_prestasi`
 --
 ALTER TABLE `tb_prestasi`
   ADD PRIMARY KEY (`id_prestasi`);
 
 --
--- Indeks untuk tabel `tb_profile`
+-- Indexes for table `tb_profile`
 --
 ALTER TABLE `tb_profile`
   ADD PRIMARY KEY (`id_profile`),
   ADD KEY `id_kategori` (`id_kategori`);
 
 --
--- Indeks untuk tabel `tb_profil_kategori`
+-- Indexes for table `tb_profil_kategori`
 --
 ALTER TABLE `tb_profil_kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `tb_struktur`
+-- Indexes for table `tb_struktur`
 --
 ALTER TABLE `tb_struktur`
   ADD PRIMARY KEY (`id_struktur`),
@@ -390,106 +390,106 @@ ALTER TABLE `tb_struktur`
   ADD KEY `id_pendidikan` (`id_pendidikan`);
 
 --
--- Indeks untuk tabel `user_login`
+-- Indexes for table `user_login`
 --
 ALTER TABLE `user_login`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_berita`
+-- AUTO_INCREMENT for table `tb_berita`
 --
 ALTER TABLE `tb_berita`
   MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_carousel`
+-- AUTO_INCREMENT for table `tb_carousel`
 --
 ALTER TABLE `tb_carousel`
   MODIFY `id_carousel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_galeri`
+-- AUTO_INCREMENT for table `tb_galeri`
 --
 ALTER TABLE `tb_galeri`
   MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_guru`
+-- AUTO_INCREMENT for table `tb_guru`
 --
 ALTER TABLE `tb_guru`
   MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_jabatan`
+-- AUTO_INCREMENT for table `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
   MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_mapel`
+-- AUTO_INCREMENT for table `tb_mapel`
 --
 ALTER TABLE `tb_mapel`
   MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pendidikan`
+-- AUTO_INCREMENT for table `tb_pendidikan`
 --
 ALTER TABLE `tb_pendidikan`
   MODIFY `id_pendidikan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_prestasi`
+-- AUTO_INCREMENT for table `tb_prestasi`
 --
 ALTER TABLE `tb_prestasi`
   MODIFY `id_prestasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_profile`
+-- AUTO_INCREMENT for table `tb_profile`
 --
 ALTER TABLE `tb_profile`
   MODIFY `id_profile` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_profil_kategori`
+-- AUTO_INCREMENT for table `tb_profil_kategori`
 --
 ALTER TABLE `tb_profil_kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_struktur`
+-- AUTO_INCREMENT for table `tb_struktur`
 --
 ALTER TABLE `tb_struktur`
   MODIFY `id_struktur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `user_login`
+-- AUTO_INCREMENT for table `user_login`
 --
 ALTER TABLE `user_login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `tb_guru`
+-- Constraints for table `tb_guru`
 --
 ALTER TABLE `tb_guru`
   ADD CONSTRAINT `tb_guru_ibfk_1` FOREIGN KEY (`id_pendidikan`) REFERENCES `tb_pendidikan` (`id_pendidikan`),
   ADD CONSTRAINT `tb_guru_ibfk_2` FOREIGN KEY (`id_mapel`) REFERENCES `tb_mapel` (`id_mapel`);
 
 --
--- Ketidakleluasaan untuk tabel `tb_profile`
+-- Constraints for table `tb_profile`
 --
 ALTER TABLE `tb_profile`
   ADD CONSTRAINT `tb_profile_ibfk_1` FOREIGN KEY (`id_kategori`) REFERENCES `tb_profil_kategori` (`id_kategori`);
 
 --
--- Ketidakleluasaan untuk tabel `tb_struktur`
+-- Constraints for table `tb_struktur`
 --
 ALTER TABLE `tb_struktur`
   ADD CONSTRAINT `tb_struktur_ibfk_1` FOREIGN KEY (`id_pendidikan`) REFERENCES `tb_pendidikan` (`id_pendidikan`),

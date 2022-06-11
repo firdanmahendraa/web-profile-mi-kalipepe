@@ -24,7 +24,6 @@
                 <div class="swiper-slide">
                   <a href="single-post.html" class="img-bg d-flex align-items-end" style="background-image: url('<?php echo base_url().'assets/foto/carousel/'.$crs->gambar ?>');">
                     <div class="img-bg-inner">
-                      
                       <h2><?php echo $crs->headline ?></h2>
                       <p><?php echo $crs->deskripsi ?></p>
                     </div>
@@ -81,11 +80,13 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="post-entry-1 border-bottom">
+              <?php foreach ($profile as $prfl) { ?>
                   <div class="post-meta">
-                    <img src="assets/main/img/post-landscape-6.jpg" alt="" class="img-fluid">
+                    <img src="<?php echo base_url().'assets/foto/profile/'.$prfl->gambar_profile ?>" alt="" class="img-fluid">
                   </div>
                   <h2 style="text-align: center;">Ahmad Junaedi, S.H</h2>
-                  <a href="single-post.html">Ini nanti berisikan sambutan kepala Sekolah. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente, laudantium dolorum itaque libero eos deleniti? </a>
+                  <a href="<?php echo base_url('profile') ?>"><?php echo substr($prfl->deskripsi_profile, 0,306) ?></a>
+              <?php } ?>
                 </div>
               </div>
             </div>
@@ -95,44 +96,29 @@
     </section><!-- End Berita Profile Section -->
 
     <!-- ======= Galeri Section ======= -->
-    <section class="category-section">
+    <section class="gallery-section">
       <div class="container" data-aos="fade-up">
         <div class="row">
           <div class="section-header d-flex justify-content-between align-items-center mb-5">
             <h2>Galeri</h2>
-            <div><a href="category.html" class="more">Lihat Semua Prestasi</a></div>
+            <div><a href="<?php echo base_url('galeri') ?>" class="more">Lihat Galeri</a></div>
           </div>
         </div>
         <div class="row">
           <div class="gallery-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide">
-              <a class="gallery-lightbox" href="assets/main/img/post-landscape-1.jpg">
-                <img src="assets/main/img/post-landscape-1.jpg" class="img-fluid" alt="">
-              </a>
+            <div class="swiper-wrapper align-items-center">
+              <?php foreach ($galeri as $gl) { ?>
+              <div class="swiper-slide">
+                <a class="gallery-lightbox" href="<?php echo base_url().'assets/foto/fotogaleri/'.$gl->gambar ?>">
+                  <img src="<?php echo base_url().'assets/foto/fotogaleri/'.$gl->gambar ?>" class="img-fluid" alt="">
+                </a>
+              </div>
+              <?php } ?>
             </div>
-            <div class="swiper-slide">
-              <a class="gallery-lightbox" href="assets/main/img/post-landscape-2.jpg">
-                <img src="assets/main/img/post-landscape-2.jpg" class="img-fluid" alt="">
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a class="gallery-lightbox" href="assets/main/img/post-landscape-3.jpg">
-                <img src="assets/main/img/post-landscape-3.jpg" class="img-fluid" alt="">
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a class="gallery-lightbox" href="assets/main/img/post-landscape-4.jpg">
-                <img src="assets/main/img/post-landscape-4.jpg" class="img-fluid" alt="">
-              </a>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-            <assets/main/img/post-landscape-6.jpgdiv>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
-      </div>
+      </diwv>
     </section><!-- End Culture Category Section -->
 
     <!-- ======= Prestasi Section ======= -->

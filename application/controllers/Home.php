@@ -8,14 +8,11 @@ class Home extends CI_Controller {
 		$this->load->model('m_app','', TRUE);
 		$this->load->library('pagination');	
 		$this->load->helper('url');
-
 	}
 
 	public function index()	{
-		// $data['prestasi'] = $this->main_model->read_post()->result();
-
 		$data['carousel'] = $this->main_model->getCarousel(3);
-		// $data['guru'] = $this->main_model->getGuru(3);
+        $data['profile'] =$this->m_app->read_profile()->result();
 		$data['berita'] = $this->main_model->getBerita(3)->result();
 		$data['prestasi'] = $this->main_model->getPrestasi(3)->result();
 		$data['galeri'] = $this->main_model->getGaleri(6);
@@ -27,16 +24,17 @@ class Home extends CI_Controller {
 		$data['struktur'] = $this->m_app->read_struktur();
         $data['profile'] =$this->m_app->read_profile()->result();
         $data['visi'] =$this->m_app->read_profile_visi()->result();
-        $data['ekskul'] =$this->m_app->read_profile_ekskul()->result();
 		$this->load->view('profile',$data);
 	}
 	public function tenaga_pendidik(){
+        $data['profile'] =$this->m_app->read_profile()->result();
 		$data['guru'] = $this->m_app->read_guru();
 		$this->load->view('tenaga_pendidik',$data);
 	}
 	public function ekstra_kulikuler(){
-		// $data['guru'] = $this->m_guru->read_guru();
-		$this->load->view('ekskul');
+        $data['profile'] =$this->m_app->read_profile()->result();
+        $data['ekskul'] =$this->m_app->read_profile_ekskul()->result();
+		$this->load->view('ekskul',$data);
 	}
 	public function prestasi(){
 		$data['prestasi'] = $this->main_model->getPrestasi()->result();
