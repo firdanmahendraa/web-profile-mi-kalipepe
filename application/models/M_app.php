@@ -54,8 +54,23 @@ class M_app extends CI_Model{
         );
         $this->db->insert('tb_profile', $data);
     }
-    function read_profile(){//read mapel
-        return $this->db->get('tb_profile');         
+    function read_profile(){//read profile
+        $this->db->select('*');
+        $this->db->from('tb_profile');
+        $this->db->where('id_kategori', '1');
+        return $this->db->get();     
+    }
+    function read_profile_visi(){//read profile visi
+        $this->db->select('*');
+        $this->db->from('tb_profile');
+        $this->db->where('id_kategori', '2');
+        return $this->db->get();     
+    }
+    function read_profile_ekskul(){//read profile ekskul
+        $this->db->select('*');
+        $this->db->from('tb_profile');
+        $this->db->where('id_kategori', '3');
+        return $this->db->get();     
     }
 
     // ============== Struktur Model ==============

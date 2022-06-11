@@ -97,7 +97,7 @@
                   </tr>
                 </thead>
            <?php $no = 1;
-                  foreach ($profile as $crs): ?>
+                  foreach ($visi as $crs): ?>
                 <tbody>
                   <td><?php echo $no++ ?></td>
                   <td><?php echo $crs->judul_profile ?></td>
@@ -146,7 +146,7 @@
                   </tr>
                 </thead>
                  <?php $no = 1;
-                  foreach ($profile as $crs): ?>
+                  foreach ($ekskul as $crs): ?>
                 <tbody>
                   <td><?php echo $no++ ?></td>
                   <td><?php echo $crs->judul_profile ?></td>

@@ -23,17 +23,15 @@
         </div>
 
         <div class="row mb-5">
-          <?php foreach ($struktur as $str) { ?>
+          <?php foreach ($profile as $p) { ?>
           <div class="d-md-flex post-entry-2 half">
             <a href="#" class="me-4 thumbnail">
-              <img src="<?php echo base_url().'assets/foto/fotostruktur/'.$str->foto_guru ?>" alt="" class="img-fluid">
+              <img src="<?php echo base_url().'assets/foto/profile/'.$p->gambar_profile ?>" alt="" class="img-fluid">
             </a>
             <div class="ps-md-5 mt-4 mt-md-0">
-              <div class="post-meta mt-4">About us</div>
-              <h2 class="mb-4 display-4">Company History</h2>
+              <h2 class="mb-4 display-4"><?php echo $p->judul_profile ?></h2>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, perspiciatis repellat maxime, adipisci non ipsam at itaque rerum vitae, necessitatibus nulla animi expedita cumque provident inventore? Voluptatum in tempora earum deleniti, culpa odit veniam, ea reiciendis sunt ullam temporibus aut!</p>
-              <p>Fugit eaque illum blanditiis, quo exercitationem maiores autem laudantium unde excepturi dolores quasi eos vero harum ipsa quam laborum illo aut facere voluptates aliquam adipisci sapiente beatae ullam. Tempora culpa iusto illum accusantium cum hic quisquam dolor placeat officiis eligendi.</p>
+              <p><?php echo $p->deskripsi_profile ?></p>
             </div>
           </div>
         <?php } ?>
@@ -46,16 +44,14 @@
       <div class="container" data-aos="fade-up">
         <div class="row justify-content-between align-items-lg-center">
           <div class="col-lg-5 mb-4 mb-lg-0">
-            <div class="post-meta mt-4">Mission &amp; Vision</div> 
-              <h2 class="mb-4 display-4">Mission &amp; Vision</h2>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, perspiciatis repellat maxime, adipisci non ipsam at itaque rerum vitae, necessitatibus nulla animi expedita cumque provident inventore? Voluptatum in tempora earum deleniti, culpa odit veniam, ea reiciendis sunt ullam temporibus aut!</p>
-              <p>Fugit eaque illum blanditiis, quo exercitationem maiores autem laudantium unde excepturi dolores quasi eos vero harum ipsa quam laborum illo aut facere voluptates aliquam adipisci sapiente beatae ullam. Tempora culpa iusto illum accusantium cum hic quisquam dolor placeat officiis eligendi.</p>
+          <?php foreach ($visi as $v) { ?>
+            <h2 class="mb-4 display-4"><?php echo $v->judul_profile ?></h2>
+            <p><?php echo $v->deskripsi_profile ?></p>
           </div>
           <div class="col-lg-6">
-              <img src="assets/main/img/post-landscape-1.jpg" alt="" class="img-fluid">
-            </div>
+            <img src="<?php echo base_url().'assets/foto/profile/'.$v->gambar_profile ?>" alt="" class="img-fluid">
           </div>
+          <?php } ?>
         </div>
       </div>
     </section>
@@ -76,7 +72,6 @@
             <img src="<?php echo base_url().'assets/foto/fotostruktur/'.$str->foto_guru ?>" alt="" class="img-fluid rounded-circle w-50 mb-4">
             <h4><?php echo $str->nama_guru ?></h4>
             <span class="d-block mb-3 text-uppercase"><?php echo $str->nama_jabatan ?></span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, perspiciatis repellat maxime, adipisci non ipsam at itaque rerum vitae, necessitatibus nulla animi expedita cumque provident inventore? Voluptatum in tempora earum deleniti, culpa odit veniam, ea reiciendis sunt ullam temporibus aut!</p>
           </div>
           <?php endforeach ?>
         </div>

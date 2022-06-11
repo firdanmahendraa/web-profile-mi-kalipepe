@@ -125,10 +125,13 @@ class Backend extends CI_Controller {
             die;
         }
     }
-	public function profile()	{
+	public function profile(){
         $data['profile'] =$this->m_app->read_profile()->result();
+        $data['visi'] =$this->m_app->read_profile_visi()->result();
+        $data['ekskul'] =$this->m_app->read_profile_ekskul()->result();
 		$this->template->views('admin/profile',$data);
 	}
+
 
 	// ============== Galeri ==============
 	public function tambah_galeri(){//create galeri

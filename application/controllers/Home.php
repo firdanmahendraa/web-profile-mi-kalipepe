@@ -25,6 +25,9 @@ class Home extends CI_Controller {
 
 	public function profile(){
 		$data['struktur'] = $this->m_app->read_struktur();
+        $data['profile'] =$this->m_app->read_profile()->result();
+        $data['visi'] =$this->m_app->read_profile_visi()->result();
+        $data['ekskul'] =$this->m_app->read_profile_ekskul()->result();
 		$this->load->view('profile',$data);
 	}
 	public function tenaga_pendidik(){
