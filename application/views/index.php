@@ -96,7 +96,7 @@
     </section><!-- End Berita Profile Section -->
 
     <!-- ======= Galeri Section ======= -->
-    <section class="gallery-section">
+    <section class="gallery">
       <div class="container" data-aos="fade-up">
         <div class="row">
           <div class="section-header d-flex justify-content-between align-items-center mb-5">
@@ -104,19 +104,17 @@
             <div><a href="<?php echo base_url('galeri') ?>" class="more">Lihat Galeri</a></div>
           </div>
         </div>
-        <div class="row">
-          <div class="gallery-slider swiper">
-            <div class="swiper-wrapper align-items-center">
-              <?php foreach ($galeri as $gl) { ?>
-              <div class="swiper-slide">
-                <a class="gallery-lightbox" href="<?php echo base_url().'assets/foto/fotogaleri/'.$gl->gambar ?>">
-                  <img src="<?php echo base_url().'assets/foto/fotogaleri/'.$gl->gambar ?>" class="img-fluid" alt="">
-                </a>
-              </div>
-              <?php } ?>
+        <div class="gallery-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <?php foreach ($galeri as $gl) { ?>
+            <div class="swiper-slide">
+              <a class="gallery-lightbox" href="<?php echo base_url().'assets/foto/fotogaleri/'.$gl->gambar ?>">
+                <img src="<?php echo base_url().'assets/foto/fotogaleri/'.$gl->gambar ?>" class="img-fluid" alt="">
+              </a>
             </div>
-            <div class="swiper-pagination"></div>
+            <?php } ?>
           </div>
+          <div class="swiper-pagination"></div>
         </div>
       </diwv>
     </section><!-- End Culture Category Section -->

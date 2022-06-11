@@ -10,13 +10,14 @@
   <!-- Vendor CSS Files -->
   <link href="<?php echo base_url('assets/main/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
   <link href="<?php echo base_url('assets/main/vendor/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
-  <link href="<?php echo base_url('assets/main/vendor/swiper/swiper-bundle.min.css') ?>" rel="stylesheet">
-  <link href="<?php echo base_url('assets/main/vendor/glightbox/css/glightbox.min.css') ?>" rel="stylesheet">
   <link href="<?php echo base_url('assets/main/vendor/aos/aos.css') ?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/main/vendor/glightbox/css/glightbox.min.css') ?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/main/vendor/swiper/swiper-bundle.min.css') ?>" rel="stylesheet">
 
   <!-- Template Main CSS Files -->
   <link href="<?php echo base_url('assets/main/css/variables.css') ?>" rel="stylesheet">
   <link href="<?php echo base_url('assets/main/css/main.css') ?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/main/style.css') ?>" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: ZenBlog - v1.0.0

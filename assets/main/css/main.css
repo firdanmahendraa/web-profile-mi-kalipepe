@@ -36,27 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 #main {
   margin-top: 90px;
 }
-.brand{
-  display: flex;
-}
 
-.brand img{
-  margin-right: 20px;
-}
-.brand .brand-name h1{
-  margin-top:3px;
-  padding-top:0px;
-  font-size: 20px;
-  font-family: Raleway, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.brand .brand-name h3{
-  text-transform: capitalize;
-  margin-top:-10px;
-  padding-top:2px;
-  font-size: 15px;
-  font-family: Raleway, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-style: oblique;
-}
 /*--------------------------------------------------------------
 # Sections & Section Header
 --------------------------------------------------------------*/
@@ -75,6 +55,7 @@ section {
 .section-header p {
   margin-bottom: 0;
 }
+
 
 /*--------------------------------------------------------------
 # Scroll top button
