@@ -3,13 +3,13 @@
 class Main_model extends CI_Model{
 
 //Prestasi Model
-	public function getCarousel($limit){
+	function getCarousel($limit){
 		return $this->db->get('tb_carousel', $limit)->result();
 	}
 //end prestasi model
 	
 //Prestasi Model
-	public function getPost($limit){
+	function getPost($limit){
 		$this->db->where('id_kategori', '2');
 		$this->db->order_by("id_post", "desc");
 		return $this->db->get('tb_post', $limit)->result();
@@ -17,7 +17,7 @@ class Main_model extends CI_Model{
 //end prestasi model
 
 //Guru Model
-	public function getGuru($limit){
+	function getGuru($limit){
         $this->db->join('tb_jabatan','tb_jabatan.id_jabatan=tb_guru.id_jabatan');
         $query = $this->db->get('tb_guru', $limit);
         return $query->result();
@@ -25,14 +25,18 @@ class Main_model extends CI_Model{
 //end guru model
 
 //Berita Model
-	public function getBerita($limit){
+	function getBerita(){
 		$this->db->order_by("id_berita", "desc");
-		return $this->db->get('tb_berita', $limit);
+		return $this->db->get('tb_berita');
 	}
+    function getBeritaId($id_berita){
+        $query = $this->db->query("SELECT * FROM tb_berita WHERE id_berita='$id_berita'");
+        return $query->result();
+    }
 //end berita model
 
 //Galeri Model
-	public function getGaleri($limit){
+	function getGaleri($limit){
 		return $this->db->get('tb_galeri', $limit)->result();
 	}
 //end berita model

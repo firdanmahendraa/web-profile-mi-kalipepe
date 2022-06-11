@@ -51,51 +51,27 @@
           <div class="col-md-9 col-sm-12">
             <div class="section-header d-flex mb-5 justify-content-between align-items-center">
               <h2>Berita</h2>
-              <div><a href="category.html" class="more">Lihat Semua Berita</a></div>
+              <div><a href="<?php echo base_url('berita') ?>" class="more">Lihat Semua Berita</a></div>
             </div>
             <div class="row">
+              <?php foreach ($berita as $b) { ?>
               <div class="col-md-5"><!-- Image -->
                 <div class=" post-entry-2">
-                  <a href="single-post.html" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
-                    <img src="assets/main/img/post-landscape-6.jpg" alt="" class="img-fluid">
-                  </a>
+                  <a href="<?php echo base_url('berita-detail/'.$b->id_berita) ?>" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
+                <img src="<?php echo base_url().'assets/foto/fotoberita/'.$b->gambar_berita ?>" alt="" class="img-fluid">
+              </a>
                 </div>
               </div>
               <div class="col-md-7"><!-- Deskripsi -->
-                <div>
-                  <h3><a href="single-post.html">Judul Berita</a></h3>
-                  <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente, laudantium dolorum itaque libero eos deleniti?</p>
+                <h3><a href="<?php echo base_url('berita-detail/'.$b->id_berita) ?>"><?php echo $b->judul_berita ?></a></h3>
+                <div class="post-meta">
+                  <span class="date"><?php echo $b->author ?></span> 
+                  <span class="mx-1">&bullet;</span> 
+                  <span><?php echo $b->tanggal_berita ?></span>
                 </div>
+                <p><?php echo substr($b->isi_berita,0, 200) ?> <a href="<?php echo base_url('berita-detail/'.$b->id_berita) ?>">... Baca Selengkapnya >></a></p>
               </div>
-              <div class="col-md-5"><!-- Image -->
-                <div class=" post-entry-2">
-                  <a href="single-post.html" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
-                    <img src="assets/main/img/post-landscape-6.jpg" alt="" class="img-fluid">
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-7"><!-- Deskripsi -->
-                <div>
-                  <h3><a href="single-post.html">Judul Berita</a></h3>
-                  <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente, laudantium dolorum itaque libero eos deleniti?</p>
-                </div>
-              </div>
-              <div class="col-md-5"><!-- Image -->
-                <div class=" post-entry-2">
-                  <a href="single-post.html" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
-                    <img src="assets/main/img/post-landscape-6.jpg" alt="" class="img-fluid">
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-7"><!-- Deskripsi -->
-                <div>
-                  <h3><a href="single-post.html">Judul Berita</a></h3>
-                  <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente, laudantium dolorum itaque libero eos deleniti?</p>
-                </div>
-              </div>
+              <?php } ?>
             </div>
           </div>
           <div class="col-md-3 col-sm-12">

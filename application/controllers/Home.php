@@ -18,7 +18,7 @@ class Home extends CI_Controller {
 		$data['carousel'] = $this->main_model->getCarousel(3);
 		// $data['prestasi'] = $this->main_model->getPost(3);
 		// $data['guru'] = $this->main_model->getGuru(3);
-		// $data['berita'] = $this->main_model->getBerita(3);
+		$data['berita'] = $this->main_model->getBerita(3)->result();
 		$data['galeri'] = $this->main_model->getGaleri(6);
 		
 		$this->load->view('index',$data);
@@ -45,13 +45,13 @@ class Home extends CI_Controller {
 		$this->load->view('prestas-detail');
 	}
 	public function berita(){
-		$data['berita'] = $this->ModelBerita->read_berita()->result();
+		$data['berita'] = $this->main_model->getBerita()->result();
 		$this->load->view('berita',$data);
 	}
 	public function berita_detail(){
 		$id_berita = $this->uri->segment(2);
-		$data['berita'] = $this->ModelBerita->getBeritaId($id_berita);
-		$data['beritaside'] = $this->ModelBerita->read_berita()->result();
+		$data['berita'] = $this->main_model->getBeritaId($id_berita);
+		$data['beritaside'] = $this->main_model->getBerita()->result();
 		$this->load->view('berita-detail',$data);
 	}
 	public function galeri(){
