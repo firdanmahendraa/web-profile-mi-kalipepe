@@ -75,7 +75,7 @@
                 <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
                   <?php foreach ($beritaside as $news) { ?>
                   <div class="post-entry-1 border-bottom">
-                    <h2 class="mb-2"><a href="<?php echo base_url()?>berita-detail"><?php echo $news->judul_berita ?></a></h2>
+                    <h2 class="mb-2"><a href="<?php echo base_url('berita-detail/'.$news->id_berita) ?>"><?php echo $news->judul_berita ?></a></h2>
                     <div class="post-meta"><span class="author mb-3 "><?php echo $news->author ?></span> <span class="mx-1">&bullet;</span> <span><?php echo $news->tanggal_berita ?></span></div>
                     <p><?php echo substr($news->isi_berita,0, 100 ) ?></p>
                   </div>
