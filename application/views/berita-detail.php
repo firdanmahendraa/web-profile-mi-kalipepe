@@ -22,15 +22,16 @@
 
             <!-- ======= Single Post Content ======= -->
             <div class="single-post">
-              <h1 class="mb-2 my-4">13 Amazing Poems from Shel Silverstein with Valuable Life Lessons</h1>
-              <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+              <?php foreach ($berita as $bb) { ?>
+              <h1 class="mb-2 my-4"><?php echo $bb->judul_berita ?></h1>
+              <div class="post-meta"><span class="date"><?php echo $bb->author ?></span> <span class="mx-1">&bullet;</span> <span><?php echo $bb->tanggal_berita ?></span></div>
 
               <figure class="my-4">
-                <img src="assets/main/img/post-landscape-1.jpg" alt="" class="img-fluid">
-                <figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, odit? </figcaption>
+                <img src="<?php echo base_url().'assets/foto/fotoberita/'.$bb->gambar_berita ?>" alt="" class="img-fluid">
+                <figcaption><?php echo $bb->judul_berita ?></figcaption>
               </figure>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione officia sed, suscipit distinctio, numquam omnis quo fuga ipsam quis inventore voluptatum recusandae culpa, unde doloribus saepe labore alias voluptate expedita? Dicta delectus beatae explicabo odio voluptatibus quas, saepe qui aperiam autem obcaecati, illo et! Incidunt voluptas culpa neque repellat sint, accusamus beatae, cumque autem tempore quisquam quam eligendi harum debitis.</p>
-              
+              <p><?php echo $bb->isi_berita ?></p>
+              <?php } ?>
             </div><!-- End Single Post Content -->
 
             <!-- ======= Comments Form ======= -->
@@ -72,35 +73,16 @@
               <div class="tab-content" id="pills-tabContent">
                 <!-- Popular -->
                 <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
+                  <?php foreach ($beritaside as $news) { ?>
                   <div class="post-entry-1 border-bottom">
-                    <div class="post-meta"><span class="date">Sport</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                    <h2 class="mb-2"><a href="#">How to Avoid Distraction and Stay Focused During Video Calls?</a></h2>
-                    <span class="author mb-3 d-block">Jenny Wilson</span>
+                    <h2 class="mb-2"><a href="<?php echo base_url()?>berita-detail"><?php echo $news->judul_berita ?></a></h2>
+                    <div class="post-meta"><span class="author mb-3 "><?php echo $news->author ?></span> <span class="mx-1">&bullet;</span> <span><?php echo $news->tanggal_berita ?></span></div>
+                    <p><?php echo substr($news->isi_berita,0, 100 ) ?></p>
                   </div>
-
-                  <div class="post-entry-1 border-bottom">
-                    <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                    <h2 class="mb-2"><a href="#">17 Pictures of Medium Length Hair in Layers That Will Inspire Your New Haircut</a></h2>
-                    <span class="author mb-3 d-block">Jenny Wilson</span>
-                  </div>
-
-                  <div class="post-entry-1 border-bottom">
-                    <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                    <h2 class="mb-2"><a href="#">9 Half-up/half-down Hairstyles for Long and Medium Hair</a></h2>
-                    <span class="author mb-3 d-block">Jenny Wilson</span>
-                  </div>
-
-                  <div class="post-entry-1 border-bottom">
-                    <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                    <h2 class="mb-2"><a href="#">Life Insurance And Pregnancy: A Working Mom’s Guide</a></h2>
-                    <span class="author mb-3 d-block">Jenny Wilson</span>
-                  </div>
+                  <?php } ?>
                 </div> <!-- End Popular -->
-
               </div>
             </div>
-
-   
           </div>
         </div>
       </div>

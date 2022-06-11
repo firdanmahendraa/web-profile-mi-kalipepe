@@ -6,6 +6,7 @@ class Home extends CI_Controller {
 		parent::__construct();
 		$this->load->model('main_model','', TRUE);
 		$this->load->model('m_app','', TRUE);
+		$this->load->model('ModelBerita','', TRUE);
 		$this->load->library('pagination');	
 		$this->load->helper('url');
 
@@ -44,15 +45,17 @@ class Home extends CI_Controller {
 		$this->load->view('prestas-detail');
 	}
 	public function berita(){
-		// $data['galeri'] = $this->m_app->read_galeri()->result();
-		$this->load->view('berita');
+		$data['berita'] = $this->ModelBerita->read_berita()->result();
+		$this->load->view('berita',$data);
 	}
 	public function berita_detail(){
-		// $data['galeri'] = $this->m_app->read_galeri()->result();
-		$this->load->view('berita-detail');
+		$id_berita = $this->uri->segment(2);
+		$data['berita'] = $this->ModelBerita->getBeritaId($id_berita);
+		$data['beritaside'] = $this->ModelBerita->read_berita()->result();
+		$this->load->view('berita-detail',$data);
 	}
 	public function galeri(){
-		$data['galeri'] = $this->m_app->read_galeri()->result();
+		$data['galeri'] = $this->m_app->read_galeri();
 		$this->load->view('galeri',$data);
 	}
 	public function galeri_detail(){

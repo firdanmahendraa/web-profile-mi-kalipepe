@@ -2,7 +2,7 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <div class="brand">
-        <img src="assets/logo.png" width="50" height="50">
+        <img src="<?php echo base_url('assets/logo.png') ?>" width="50" height="50">
         <div class="brand-name">
          <h1>MI MUHAMMADIYAH KALIPEPE</h1>
          <h3>Berani beda, selangkah lebih maju</h3>

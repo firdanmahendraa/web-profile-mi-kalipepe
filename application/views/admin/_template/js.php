@@ -35,24 +35,14 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
+  $(function () {
+    // Summernote
+    $('#summernote').summernote()
+    $('#summernote1').summernote()
+
   $('.custom-file-input').on('change', function(){
     let fileName = $(this).val().split('\\').pop();
     $(this).next('.custom-file-label').addClass("selected").html(fileName);
   });
+  })
 </script>
-<!-- <script>
-  function filePreview(input) {
-    if (input.files && input.files[0]) {
-      var render = new FileReader();
-      render.onload = function (e){
-        $('#uplaodForm + img').remove();
-        $('#uplaodForm').after('<img src="'+e.target+'" width="450" height="300/>');
-      };
-      render.readAsDataURL(input.files[0]);
-    }
-  }
-  $("#file").change(function(){
-    filePreview(this);
-  });
-</script> -->
-

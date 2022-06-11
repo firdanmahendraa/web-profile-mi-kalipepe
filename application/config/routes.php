@@ -60,8 +60,7 @@ $route['galeri'] = 'home/galeri';
 $route['prestasi'] = 'home/prestasi';
 $route['prestasi-detail'] = 'home/prestasi_detail';
 $route['berita'] = 'home/berita';
-$route['berita-detail'] = 'home/berita_detail';
-$route['berita-detail'] = 'home/berita_detail';
+$route['berita-detail/(:any)'] = 'home/berita_detail/$id_berita';
 $route['kontak'] = 'home/kontak';
 
 $route['login'] = 'login';
@@ -70,7 +69,8 @@ $route['carousel'] = 'backend/carousel';
 $route['profile/p'] = 'backend/profile';
 $route['prestasi/p'] = 'backend/prestasi';
 $route['galeri/p'] = 'backend/galeri';
-$route['berita/p'] = 'backend/news';
+
+$route['berita/p'] = 'admin/BeritaController';
 
 $route['data-struktur'] = 'backend/data_struktur';
 $route['data-guru'] = 'backend/data_guru';

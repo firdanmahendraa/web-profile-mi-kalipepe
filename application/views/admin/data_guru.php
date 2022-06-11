@@ -129,7 +129,7 @@
               <div class="form-group">
                 <label>Mata Pelajaran</label>
                 <select name="id_mapel" type="text" class="custom-select">
-                  <option>Pilih M2ata Pelajaran</option>
+                  <option>Pilih Mata Pelajaran</option>
                   <?php foreach($mapel as $j): ?>
                   <option value="<?= $j->id_mapel ?>"><?php echo $j->mata_pelajaran ?></option>
                   <?php endforeach ?>

@@ -120,7 +120,8 @@ class M_app extends CI_Model{
 
     // ============== Galeri Model ==============
     function read_galeri(){//read mapel
-        return $this->db->get('tb_galeri');         
+        $query = $this->db->get('tb_galeri');   
+        return $query->result();        
     }
 
 

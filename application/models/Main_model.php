@@ -26,9 +26,8 @@ class Main_model extends CI_Model{
 
 //Berita Model
 	public function getBerita($limit){
-		$this->db->where('id_kategori', '1');
-		$this->db->order_by("id_post", "desc");
-		return $this->db->get('tb_post', $limit)->result();
+		$this->db->order_by("id_berita", "desc");
+		return $this->db->get('tb_berita', $limit);
 	}
 //end berita model
 

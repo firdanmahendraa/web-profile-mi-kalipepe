@@ -23,10 +23,10 @@
         </div>
 
         <div class="row mb-5">
-
+          <?php foreach ($struktur as $str) { ?>
           <div class="d-md-flex post-entry-2 half">
             <a href="#" class="me-4 thumbnail">
-              <img src="assets/main/img/post-landscape-2.jpg" alt="" class="img-fluid">
+              <img src="<?php echo base_url().'assets/foto/fotostruktur/'.$str->foto_guru ?>" alt="" class="img-fluid">
             </a>
             <div class="ps-md-5 mt-4 mt-md-0">
               <div class="post-meta mt-4">About us</div>
@@ -36,7 +36,7 @@
               <p>Fugit eaque illum blanditiis, quo exercitationem maiores autem laudantium unde excepturi dolores quasi eos vero harum ipsa quam laborum illo aut facere voluptates aliquam adipisci sapiente beatae ullam. Tempora culpa iusto illum accusantium cum hic quisquam dolor placeat officiis eligendi.</p>
             </div>
           </div>
-
+        <?php } ?>
         </div>
 
       </div>
@@ -46,7 +46,7 @@
       <div class="container" data-aos="fade-up">
         <div class="row justify-content-between align-items-lg-center">
           <div class="col-lg-5 mb-4 mb-lg-0">
-            <div class="post-meta mt-4">Mission &amp; Vision</div>
+            <div class="post-meta mt-4">Mission &amp; Vision</div> 
               <h2 class="mb-4 display-4">Mission &amp; Vision</h2>
 
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, perspiciatis repellat maxime, adipisci non ipsam at itaque rerum vitae, necessitatibus nulla animi expedita cumque provident inventore? Voluptatum in tempora earum deleniti, culpa odit veniam, ea reiciendis sunt ullam temporibus aut!</p>

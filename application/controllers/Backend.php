@@ -149,9 +149,7 @@ class Backend extends CI_Controller {
 		$this->template->views('admin/galeri',$data);
 	}
 
-	public function news()	{
-		$this->template->views('admin/news');
-	}
+
 
 	// Menu
 	// ============== Data Struktur ==============
@@ -244,10 +242,6 @@ class Backend extends CI_Controller {
                 unlink(FCPATH . 'assets/foto/fotoguru/' . $old_image);
             }
             
-            // $new_image = $this->upload->data('file_name');
-            // $this->db->set('foto_guru',$new_image);
-
-
             $this->m_app->update_guru($id,$data);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">berhasil di simpan</div>');
             redirect('data-guru');
