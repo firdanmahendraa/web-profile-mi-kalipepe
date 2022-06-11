@@ -63,6 +63,7 @@ $route['berita'] = 'home/berita';
 $route['berita-detail/(:any)'] = 'home/berita_detail/$id_berita';
 $route['kontak'] = 'home/kontak';
 
+// ================Admin================
 $route['login'] = 'login';
 $route['dashboard'] = 'backend';
 $route['carousel'] = 'backend/carousel';
@@ -77,3 +78,4 @@ $route['data-guru'] = 'backend/data_guru';
 $route['data-mapel'] = 'backend/data_mapel';
 $route['data-jabatan'] = 'backend/data_jabatan';
 $route['data-jenjang'] = 'backend/data_jenjang';
+$route['data-kategori'] = 'backend/data_kategori';
