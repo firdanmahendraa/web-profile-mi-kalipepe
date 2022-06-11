@@ -65,8 +65,8 @@ class Home extends CI_Controller {
 		$this->load->view('galeri-detail');
 	}
 	public function kontak(){
-		// $data['galeri'] = $this->m_app->read_galeri()->result();
-		$this->load->view('kontak');
+        $data['profile'] =$this->m_app->read_profile()->result();
+		$this->load->view('kontak', $data);
 	}
 
 } 
