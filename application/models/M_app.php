@@ -38,6 +38,26 @@ class M_app extends CI_Model{
         return TRUE;
     }
 
+    // ============== Profile Model ==============
+    function create_profile(){//create guru
+        $gambar_profile      = $this->upload->data();
+        $gambar_profile      = $gambar_profile['file_name'];
+        $id_kategori         = $this->input->post('id_kategori', TRUE);
+        $judul_profile       = $this->input->post('judul_profile', TRUE);
+        $deskripsi_profile   = $this->input->post('deskripsi_profile', TRUE);
+
+        $data = array(
+            'id_kategori' => $id_kategori,
+            'judul_profile' => $judul_profile,
+            'deskripsi_profile' => $deskripsi_profile,
+            'gambar_profile' => $gambar_profile
+        );
+        $this->db->insert('tb_profile', $data);
+    }
+    function read_profile(){//read mapel
+        return $this->db->get('tb_profile');         
+    }
+
     // ============== Struktur Model ==============
     function create_struktur(){//create struktur
         $foto_guru              = $this->upload->data();

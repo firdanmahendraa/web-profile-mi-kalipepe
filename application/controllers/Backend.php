@@ -104,8 +104,30 @@ class Backend extends CI_Controller {
 
 
 	// ============== Profile ==============
+    public function tambah_profile(){
+        $config['upload_path']          = './assets/foto/profile';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['max_size']             = 10000000;
+        $config['max_width']            = 10000000;
+        $config['max_height']           = 10000000;
+
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);  
+
+        if ($this->upload->do_upload('gambar_profile')){
+            $this->m_app->create_profile();
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
+            berhasil di simpan
+          </div>');
+            redirect('profile/p');
+        }else{
+            print_r($this->upload->display_errors());
+            die;
+        }
+    }
 	public function profile()	{
-		$this->template->views('admin/profile');
+        $data['profile'] =$this->m_app->read_profile()->result();
+		$this->template->views('admin/profile',$data);
 	}
 
 	// ============== Galeri ==============
