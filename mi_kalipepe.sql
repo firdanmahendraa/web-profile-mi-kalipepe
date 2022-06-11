@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2022 at 05:58 AM
+-- Generation Time: Jun 11, 2022 at 07:50 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -202,6 +202,55 @@ INSERT INTO `tb_pendidikan` (`id_pendidikan`, `jenjang_pendidikan`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_prestasi`
+--
+
+CREATE TABLE `tb_prestasi` (
+  `id_prestasi` int(11) NOT NULL,
+  `judul_prestasi` longtext NOT NULL,
+  `isi_prestasi` longtext NOT NULL,
+  `tanggal_prestasi` date NOT NULL,
+  `gambar_prestasi` varchar(64) NOT NULL,
+  `author` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_prestasi`
+--
+
+INSERT INTO `tb_prestasi` (`id_prestasi`, `judul_prestasi`, `isi_prestasi`, `tanggal_prestasi`, `gambar_prestasi`, `author`) VALUES
+(1, 'Prestasi 1', '<p><span xss=removed>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non maximus lacus, eu convallis ipsum. Nulla convallis diam vel mi dignissim, ac dictum urna tristique. Aenean at nibh sed sem sodales congue. Suspendisse rutrum lacus ac arcu accumsan, eget consectetur sem laoreet. Aliquam et urna posuere, molestie ante vel, vulputate mauris. Mauris porttitor ante ligula. Duis fringilla semper mattis. Nulla non risus at quam congue feugiat vestibulum auctor elit. Sed vel quam vitae justo euismod convallis. Nullam molestie dignissim mauris, ut fringilla orci dapibus a. Fusce nunc nunc, rutrum non nisl elementum, tincidunt mattis orci. Aenean eleifend leo eu mi fermentum, vel bibendum elit ornare. Nulla tempor purus eu mi fringilla, id venenatis nisl tincidunt. Curabitur nec malesuada libero. Suspendisse et iaculis leo, eu vehicula ipsum.</span><br></p>', '2022-06-11', 'post-landscape-81.jpg', 'admin'),
+(2, 'Prestasi 2', '<p xss=removed>Sed sit amet nulla ut nisl interdum fermentum quis in diam. Maecenas nec dictum mi, vitae venenatis mauris. Integer tempor a urna scelerisque faucibus. Nam odio ipsum, bibendum eget vestibulum vitae, posuere ut enim. Donec condimentum, nunc eu ultrices efficitur, tellus eros viverra urna, id faucibus massa sapien ac enim. Etiam et eleifend felis. Nulla facilisi. Suspendisse potenti. Quisque nec gravida lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam imperdiet euismod egestas. Mauris imperdiet euismod quam a pretium.</p><p xss=removed>Curabitur fermentum efficitur leo vitae dictum. Suspendisse ac interdum turpis. Proin ultricies elit dolor, at molestie dolor tincidunt a. Cras gravida lacus et orci dapibus, at auctor quam faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis nec odio quis ex consectetur porttitor nec feugiat justo. Sed dui nunc, pretium mattis risus sit amet, aliquet vulputate ante. Maecenas a leo quis magna fringilla ultricies pretium eget velit.</p>', '2022-06-11', 'post-landscape-7.jpg', 'admin'),
+(3, 'Prestasi 3', '<p xss=removed>Praesent sit amet egestas augue, quis auctor erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet fringilla mauris, sit amet vulputate ante. Morbi porta ultrices eros. Aliquam facilisis odio a turpis pellentesque, a tristique nisi laoreet. Pellentesque sagittis porttitor turpis, ac finibus neque ullamcorper eget. Praesent ultrices dui quis tincidunt suscipit. Phasellus nec enim pellentesque, fermentum nunc in, tincidunt risus. Quisque elementum et ante auctor ultrices. Proin faucibus, felis a iaculis vehicula, magna ante faucibus est, id ornare ante sem non mi. Suspendisse feugiat lacus vitae mi sagittis congue.</p><p xss=removed>Integer sapien diam, blandit quis lobortis convallis, porta ut leo. Etiam libero massa, lacinia euismod massa id, gravida venenatis justo. Phasellus tempor ultricies condimentum. Quisque rhoncus, augue ut varius convallis, ipsum nisi varius turpis, ac consectetur dolor sapien sed lectus. Sed imperdiet imperdiet nunc congue cursus. Donec cursus nisl eros, quis lobortis odio pulvinar vel. Vivamus lobortis massa vitae ornare pulvinar. Nulla auctor porttitor augue, at ultrices leo aliquam eu. Quisque non pharetra enim. Vestibulum dignissim, dui non semper semper, augue orci porttitor est, nec cursus nibh massa vitae dolor. Pellentesque vulputate lectus in ante aliquet tincidunt. Aenean consequat risus felis, ut ultricies nisl ullamcorper in. Fusce egestas est in elit fringilla, eleifend tempor neque rutrum. Fusce semper ligula eu nulla ornare, vitae semper mauris egestas. Nullam maximus tempus arcu vel aliquet. Phasellus in eros sit amet urna convallis viverra nec sed diam.</p>', '2022-06-11', 'post-landscape-5.jpg', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_profile`
+--
+
+CREATE TABLE `tb_profile` (
+  `id_profile` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `judul_profile` longtext NOT NULL,
+  `deskripsi_profile` longtext NOT NULL,
+  `gambar_profile` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_profil_kategori`
+--
+
+CREATE TABLE `tb_profil_kategori` (
+  `id_kategori` int(11) NOT NULL,
+  `nama_kategori` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_struktur`
 --
 
@@ -296,6 +345,25 @@ ALTER TABLE `tb_pendidikan`
   ADD PRIMARY KEY (`id_pendidikan`);
 
 --
+-- Indexes for table `tb_prestasi`
+--
+ALTER TABLE `tb_prestasi`
+  ADD PRIMARY KEY (`id_prestasi`);
+
+--
+-- Indexes for table `tb_profile`
+--
+ALTER TABLE `tb_profile`
+  ADD PRIMARY KEY (`id_profile`),
+  ADD KEY `id_kategori` (`id_kategori`);
+
+--
+-- Indexes for table `tb_profil_kategori`
+--
+ALTER TABLE `tb_profil_kategori`
+  ADD PRIMARY KEY (`id_kategori`);
+
+--
 -- Indexes for table `tb_struktur`
 --
 ALTER TABLE `tb_struktur`
@@ -356,6 +424,24 @@ ALTER TABLE `tb_pendidikan`
   MODIFY `id_pendidikan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
+-- AUTO_INCREMENT for table `tb_prestasi`
+--
+ALTER TABLE `tb_prestasi`
+  MODIFY `id_prestasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tb_profile`
+--
+ALTER TABLE `tb_profile`
+  MODIFY `id_profile` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_profil_kategori`
+--
+ALTER TABLE `tb_profil_kategori`
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tb_struktur`
 --
 ALTER TABLE `tb_struktur`
@@ -377,6 +463,12 @@ ALTER TABLE `user_login`
 ALTER TABLE `tb_guru`
   ADD CONSTRAINT `tb_guru_ibfk_1` FOREIGN KEY (`id_pendidikan`) REFERENCES `tb_pendidikan` (`id_pendidikan`),
   ADD CONSTRAINT `tb_guru_ibfk_2` FOREIGN KEY (`id_mapel`) REFERENCES `tb_mapel` (`id_mapel`);
+
+--
+-- Constraints for table `tb_profile`
+--
+ALTER TABLE `tb_profile`
+  ADD CONSTRAINT `tb_profile_ibfk_1` FOREIGN KEY (`id_kategori`) REFERENCES `tb_profil_kategori` (`id_kategori`);
 
 --
 -- Constraints for table `tb_struktur`
