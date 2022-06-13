@@ -22,7 +22,7 @@
               <div class="swiper-wrapper">
                 <?php foreach ($carousel as $crs) { ?>
                 <div class="swiper-slide">
-                  <a href="single-post.html" class="img-bg d-flex align-items-end" style="background-image: url('<?php echo base_url().'assets/foto/carousel/'.$crs->gambar ?>');">
+                  <a href="<?php echo base_url().'assets/foto/carousel/'.$crs->gambar ?>" class="img-bg d-flex align-items-end gallery-lightbox" style="background-image: url('<?php echo base_url().'assets/foto/carousel/'.$crs->gambar ?>');">
                     <div class="img-bg-inner">
                       <h2><?php echo $crs->headline ?></h2>
                       <p><?php echo $crs->deskripsi ?></p>
