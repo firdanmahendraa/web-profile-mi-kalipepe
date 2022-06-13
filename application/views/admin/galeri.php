@@ -57,7 +57,9 @@
                     <td><img src="<?php echo base_url().'assets/foto/fotogaleri/'.$p->gambar ?>" width="100"></td>
                     <td>
                       <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-guru<?php echo $p->id_galeri; ?>" ><i class="fas fa-edit" style="color: #fff;"></i></button>
-                      <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>cms/hapus_galeri/<?= $p->id_galeri; ?>/<?=$p->gambar ?>" ><i class="fas fa-trash"></i></a>                    </td>
+                      <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>admin/GaleriController/hapus_galeri/<?php echo $p->id_galeri; ?>>">
+                        <i class="fas fa-trash"></i>
+                      </a>
                   </tr>
                 </tbody>
                 <?php } ?> 
@@ -84,7 +86,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <?php echo form_open_multipart('backend/tambah_galeri'); ?>
+        <?php echo form_open_multipart('admin/GaleriController/tambah_galeri'); ?>
           <div class="form-group">
             <label>Judul Gambar</label>
             <input type="text" name="judul_gl" class="form-control" placeholder="Masukkan Judul">

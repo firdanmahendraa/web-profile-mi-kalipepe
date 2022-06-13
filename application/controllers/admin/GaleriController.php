@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class GaleriController extends CI_Controller{
     public function __construct(){
         parent::__construct();
-        $this->load->model('m_app');
+        $this->load->model('ModelGaleri');
 
         if($this->session->userdata('status') != "login"){
             redirect(base_url("login"));
@@ -12,7 +12,7 @@ class GaleriController extends CI_Controller{
     }
 
     function index(){
-        $data['galeri'] = $this->m_app->read_galeri();
+        $data['galeri'] = $this->ModelGaleri->read_galeri();
         $this->template->views('admin/galeri',$data);        
     }
     public function tambah_galeri(){//create galeri
@@ -44,6 +44,17 @@ class GaleriController extends CI_Controller{
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
                 Data Berhasil Disimpan!</div>');
             redirect('galeri/p');
+        }
+    }
+    public function hapus_galeri($id){//delete carousel
+        $data = $this->ModelGaleri->getDataById($id)->row();
+        $gambar = './assets/foto/fotogaleri/'.$data->gambar;
+        if (is_readable($gambar) && unlink($gambar)) {
+            $delete = $this->ModelGaleri->delete_galeri($id);
+            redirect('galeri/p');
+        }else{
+            echo "gagal";
+            echo $gambar; 
         }
     }
 

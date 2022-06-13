@@ -1,12 +1,7 @@
 <?php 
-/**
- * 
- */
-class M_app extends CI_Model{
-    // ============== Carausel Model ==============
 
+class ModelProfile extends CI_Model{
 
-    // ============== Profile Model ==============
     function create_profile(){//create guru
         $gambar_profile      = $this->upload->data();
         $gambar_profile      = $gambar_profile['file_name'];
@@ -41,30 +36,6 @@ class M_app extends CI_Model{
         return $this->db->get();     
     }
 
-    // ============== Struktur Model ==============
-
-
-    // ============== Guru Model ==============
-
-
-    // ============== Galeri Model ==============
-    function read_galeri(){//read mapel
-        $query = $this->db->get('tb_galeri');   
-        return $query->result();        
-    }
-
-
-
-	// ============== Jabatan Model ==============
-
-
-    // ============== Jenjang Model ==============
-
-
-     // ============== Mapel Model ==============
-
-
-     // ============== Kategori Model ==============
-
 }
+
  ?>

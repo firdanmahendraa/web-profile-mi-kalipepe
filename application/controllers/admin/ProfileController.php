@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class ProfileController extends CI_Controller{
     public function __construct(){
         parent::__construct();
-        $this->load->model('m_app');
+        $this->load->model('ModelProfile');
 
         if($this->session->userdata('status') != "login"){
             redirect(base_url("login"));
@@ -12,9 +12,9 @@ class ProfileController extends CI_Controller{
     }
 
     function index(){
-        $data['profile'] =$this->m_app->read_profile()->result();
-        $data['visi'] =$this->m_app->read_profile_visi()->result();
-        $data['ekskul'] =$this->m_app->read_profile_ekskul()->result();
+        $data['profile'] =$this->ModelProfile->read_profile()->result();
+        $data['visi'] =$this->ModelProfile->read_profile_visi()->result();
+        $data['ekskul'] =$this->ModelProfile->read_profile_ekskul()->result();
         $this->template->views('admin/profile',$data);        
     }
     public function tambah_profile(){
@@ -28,7 +28,7 @@ class ProfileController extends CI_Controller{
         $this->upload->initialize($config);  
 
         if ($this->upload->do_upload('gambar_profile')){
-            $this->m_app->create_profile();
+            $this->ModelProfile->create_profile();
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
             berhasil di simpan
           </div>');
