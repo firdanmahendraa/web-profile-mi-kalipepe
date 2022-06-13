@@ -65,17 +65,16 @@ $route['kontak'] = 'home/kontak';
 
 // ================Admin================
 $route['login'] = 'login';
-$route['dashboard'] = 'backend';
-$route['carousel'] = 'backend/carousel';
-$route['profile/p'] = 'backend/profile';
-$route['galeri/p'] = 'backend/galeri';
-
+$route['dashboard'] = 'admin/DashboardController';
+$route['carousel'] = 'admin/CarouselController';
+$route['profile/p'] = 'admin/ProfileController';
+$route['galeri/p'] = 'admin/GaleriController';
 $route['prestasi/p'] = 'admin/PrestasiController';
 $route['berita/p'] = 'admin/BeritaController';
 
-$route['data-struktur'] = 'backend/data_struktur';
-$route['data-guru'] = 'backend/data_guru';
-$route['data-mapel'] = 'backend/data_mapel';
-$route['data-jabatan'] = 'backend/data_jabatan';
-$route['data-jenjang'] = 'backend/data_jenjang';
-$route['data-kategori'] = 'backend/data_kategori';
+$route['data-struktur'] = 'admin/StrukturController';
+$route['data-guru'] = 'admin/GuruController';
+$route['data-mapel'] = 'admin/MapelController';
+$route['data-jabatan'] = 'admin/JabatanController';
+$route['data-jenjang'] = 'admin/JenjangController';
+$route['data-kategori'] = 'admin/KategoriController';
