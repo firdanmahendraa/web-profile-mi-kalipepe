@@ -59,7 +59,7 @@
                     <td><?php echo $p->author ?></td>
                     <td>
                       <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-berita<?php echo $p->id_berita; ?>" ><i class="fas fa-edit" style="color: #fff;"></i></button>
-                      <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>Dataguru/hapus_guru?>" ><i class="fas fa-trash"></i></a>
+                      <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>admin/BeritaController/hapus_berita/<?php echo $p->id_berita; ?>" ><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
                 </tbody>

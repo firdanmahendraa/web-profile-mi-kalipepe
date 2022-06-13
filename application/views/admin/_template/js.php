@@ -39,6 +39,8 @@
     // Summernote
     $('#summernote').summernote()
     $('#summernote1').summernote()
+    $('#summernote2').summernote()
+    $('#summernote3').summernote()
 
   $('.custom-file-input').on('change', function(){
     let fileName = $(this).val().split('\\').pop();

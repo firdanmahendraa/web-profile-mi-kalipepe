@@ -42,25 +42,23 @@ class CarouselController extends CI_Controller{
         $gambar = './assets/foto/carousel/'.$data->gambar;
 
         if (is_readable($gambar) && unlink($gambar)) {
-            $config['upload_path']          = './assets/foto/carousel/';
+            $config['upload_path']          = './assets/foto/carousel';
             $config['allowed_types']        = 'gif|jpg|png|jpeg';
             $config['max_size']             = 2048;
             $config['max_width']            = 10000000;
             $config['max_height']           = 10000000;
 
           $this->load->library('upload', $config);
+          $this->upload->initialize($config);  
           if (!$this->upload->do_upload('gambar')) {
               $error = array('error' => $this->upload->display_errors());
           }else{
-            $upload_data = $this->upload->data();
-            $name = $upload_data['file_name'];
-
             $data = array(
-                    'gambar' => $gambar,
                     'headline' => $this->input->post('headline'),
                     'deskripsi' => $this->input->post('deskripsi'),
                     'status' => $this->input->post('status'),
-                    'tanggal_post' => $this->input->post('tanggal_post')
+                    'tanggal_post' => $this->input->post('tanggal_post'),
+                    'gambar' => $gambar
                 );
             $update = $this->modelcarousel->update_carousel($id,$data);
             if ($update) {

@@ -34,6 +34,17 @@ class PrestasiController extends CI_Controller{
             die;
         }
     }
+    function hapus_prestasi($id){//delete prestasi
+        $data = $this->ModelPrestasi->getDataById($id)->row();
+        $gambar = './assets/foto/fotoprestasi/'.$data->gambar_prestasi;
+        if (is_readable($gambar) && unlink($gambar)) {
+            $delete = $this->ModelPrestasi->delete_prestasi($id);
+            redirect('prestasi/p');
+        }else{
+            echo "gagal";
+            echo $gambar; 
+        }
+    }
 
 }
 ?>

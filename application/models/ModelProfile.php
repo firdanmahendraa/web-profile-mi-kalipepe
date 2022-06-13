@@ -35,6 +35,14 @@ class ModelProfile extends CI_Model{
         $this->db->where('id_kategori', '3');
         return $this->db->get();     
     }
+    function getDataById($id){
+        $this->db->where('id_profile',$id);
+        return $this->db->get('tb_profile');
+    }
+    function delete_profile($id){//delete carausel
+        $this->db->where('id_profile',$id);
+        return $this->db->delete('tb_profile');       
+    }
 
 }
 

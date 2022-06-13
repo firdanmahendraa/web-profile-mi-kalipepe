@@ -24,9 +24,13 @@ class ModelBerita extends CI_Model{
         $this->db->order_by("id_berita", "desc");
         return $this->db->get('tb_berita');         
     }
-    function getBeritaId($id_berita){
-        $query = $this->db->query("SELECT * FROM tb_berita WHERE id_berita='$id_berita'");
-        return $query->result();
+    function getDataById($id){
+        $this->db->where('id_berita',$id);
+        return $this->db->get('tb_berita');
+    }
+    function delete_berita($id){//delete berita
+        $this->db->where('id_berita',$id);
+        return $this->db->delete('tb_berita');       
     }
 
 	

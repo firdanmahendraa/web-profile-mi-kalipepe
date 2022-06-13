@@ -24,9 +24,13 @@ class ModelPrestasi extends CI_Model{
         $this->db->order_by("id_prestasi", "desc");
         return $this->db->get('tb_prestasi');         
     }
-    function getPrestasiId($id_prestasi){
-        $query = $this->db->query("SELECT * FROM tb_prestasi WHERE id_prestasi='$id_prestasi'");
-        return $query->result();
+    function getDataById($id){
+        $this->db->where('id_prestasi',$id);
+        return $this->db->get('tb_prestasi');
+    }
+    function delete_prestasi($id){//delete carausel
+        $this->db->where('id_prestasi',$id);
+        return $this->db->delete('tb_prestasi');       
     }
 
 	

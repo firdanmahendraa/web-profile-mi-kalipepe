@@ -38,7 +38,17 @@ class ProfileController extends CI_Controller{
             die;
         }
     }
-
+    function hapus_profile($id){//delete carousel
+        $data = $this->ModelProfile->getDataById($id)->row();
+        $gambar = './assets/foto/profile/'.$data->gambar_profile;
+        if (is_readable($gambar) && unlink($gambar)) {
+            $delete = $this->ModelProfile->delete_profile($id);
+            redirect('profile/p');
+        }else{
+            echo "gagal";
+            echo $gambar; 
+        }
+    }
 
 }
 ?>

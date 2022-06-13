@@ -152,7 +152,7 @@
       </div>
       <div class="modal-body">
         <?php echo form_open_multipart('admin/CarouselController/edit_carousel'); ?>
-        <input type="hidden" name="id" class="form-control">
+        <input type="hidden" name="id" value="<?php echo $crs->id_carousel ?>" class="form-control">
         <input type="hidden" name="tanggal_post" value="<?php echo date("Y-m-d"); ?>">
         <div class="form-group">
           <label>Gambar Postingan</label>
