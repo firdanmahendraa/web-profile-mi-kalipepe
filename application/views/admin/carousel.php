@@ -63,7 +63,7 @@
                   </td>
                   <td>
                     <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-carousel<?php echo $crs->id_carousel; ?>" ><i class="fas fa-edit" style="color: #fff;"></i></a>
-                    <a class="btn btn-sm btn-danger" href="" ><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>admin/CarouselController/hapus_carousel/<?php echo $crs->id_carousel; ?>>"><i class="fas fa-trash"></i></a>
                   </td>
                   <?php endforeach ?>
                 </tbody>
@@ -91,7 +91,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <?php echo form_open_multipart('backend/tambah_carousel'); ?>
+        <?php echo form_open_multipart('admin/CarouselController/tambah_carousel'); ?>
         <input type="hidden" name="tanggal_post" value="<?php echo date("Y-m-d"); ?>">
         <div class="form-group">
           <label>Gambar Postingan</label>
@@ -151,13 +151,13 @@
         </button>
       </div>
       <div class="modal-body">
-        <?php echo form_open_multipart('backend/edit_carousel'); ?>
+        <?php echo form_open_multipart('admin/CarouselController/edit_carousel'); ?>
         <input type="hidden" name="id" class="form-control">
         <input type="hidden" name="tanggal_post" value="<?php echo date("Y-m-d"); ?>">
         <div class="form-group">
           <label>Gambar Postingan</label>
           <div class="custom-file">
-            <input type="file" name="gambar" class="custom-file-input" value="<?php echo $crs->gambar ?>" required>
+            <input type="file" name="gambar" class="custom-file-input" value="<?php echo $crs->gambar ?>">
             <label class="custom-file-label" for="foto">choose file</label>
           </div>
         </div>

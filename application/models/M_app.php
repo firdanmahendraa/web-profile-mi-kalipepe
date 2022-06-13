@@ -4,7 +4,7 @@
  */
 class M_app extends CI_Model{
     // ============== Carausel Model ==============
-    function create_carousel(){//create guru
+    function create_carousel(){//create carausel
         $gambar      = $this->upload->data();
         $gambar      = $gambar['file_name'];
         $headline      = $this->input->post('headline', TRUE);
@@ -22,20 +22,17 @@ class M_app extends CI_Model{
     function read_carousel(){//read mapel
         return $this->db->get('tb_carousel');         
     }
-    function update_carousel($id,$data){//update guru
+    function update_carousel($id,$data){//update carausel
         $this->db->where('id_carousel',$id);
         $this->db->update('tb_carousel', $data);
     }
-    function c($id_carousel){//get-id
-        $data = $this->db->where(['id_carousel', $id_carousel])->get('tb_carousel');
-        if ($data->num_rows()>0) {
-            return $data->row();
-        }
+    function getDataById($id){
+        $this->db->where('id_carousel',$id);
+        return $this->db->get('tb_carousel');
     }
-    function delete_carousel($id_carousel){//delete guru
-        $this->db->where('id_carousel', $id_carousel);
-        $this->db->delete('tb_carousel');
-        return TRUE;
+    function delete_carousel($id){//delete carausel
+        $this->db->where('id_carousel',$id);
+        return $this->db->delete('tb_carousel');       
     }
 
     // ============== Profile Model ==============
