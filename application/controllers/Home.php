@@ -5,14 +5,18 @@ class Home extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('main_model','', TRUE);
-		$this->load->model('m_app','', TRUE);
+		$this->load->model('ModelProfile');
+		$this->load->model('ModelStruktur');
+		$this->load->model('ModelGuru');
+		$this->load->model('ModelProfile');
+		$this->load->model('ModelGaleri');
 		$this->load->library('pagination');	
 		$this->load->helper('url');
 	}
 
 	public function index()	{
 		$data['carousel'] = $this->main_model->getCarousel(3);
-        $data['profile'] =$this->m_app->read_profile()->result();
+        $data['profile'] =$this->ModelProfile->read_profile()->result();
 		$data['berita'] = $this->main_model->getBerita(3)->result();
 		$data['prestasi'] = $this->main_model->getPrestasi(3)->result();
 		$data['galeri'] = $this->main_model->getGaleri(6);
@@ -21,19 +25,19 @@ class Home extends CI_Controller {
 	}
 
 	public function profile(){
-		$data['struktur'] = $this->m_app->read_struktur();
-        $data['profile'] =$this->m_app->read_profile()->result();
-        $data['visi'] =$this->m_app->read_profile_visi()->result();
+		$data['struktur'] = $this->ModelStruktur->read_struktur();
+        $data['profile'] =$this->ModelProfile->read_profile()->result();
+        $data['visi'] =$this->ModelProfile->read_profile_visi()->result();
 		$this->load->view('profile',$data);
 	}
 	public function tenaga_pendidik(){
-        $data['profile'] =$this->m_app->read_profile()->result();
-		$data['guru'] = $this->m_app->read_guru();
+        $data['profile'] =$this->ModelProfile->read_profile()->result();
+		$data['guru'] = $this->ModelGuru->read_guru();
 		$this->load->view('tenaga_pendidik',$data);
 	}
 	public function ekstra_kulikuler(){
-        $data['profile'] =$this->m_app->read_profile()->result();
-        $data['ekskul'] =$this->m_app->read_profile_ekskul()->result();
+        $data['profile'] =$this->ModelProfile->read_profile()->result();
+        $data['ekskul'] =$this->ModelProfile->read_profile_ekskul()->result();
 		$this->load->view('ekskul',$data);
 	}
 	public function prestasi(){
@@ -57,15 +61,14 @@ class Home extends CI_Controller {
 		$this->load->view('berita-detail',$data);
 	}
 	public function galeri(){
-		$data['galeri'] = $this->m_app->read_galeri();
+		$data['galeri'] = $this->ModelGaleri->read_galeri();
 		$this->load->view('galeri',$data);
 	}
 	public function galeri_detail(){
-		// $data['galeri'] = $this->m_app->read_galeri()->result();
 		$this->load->view('galeri-detail');
 	}
 	public function kontak(){
-        $data['profile'] =$this->m_app->read_profile()->result();
+        $data['profile'] =$this->ModelProfile->read_profile()->result();
 		$this->load->view('kontak', $data);
 	}
 

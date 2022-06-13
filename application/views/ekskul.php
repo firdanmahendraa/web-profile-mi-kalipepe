@@ -37,22 +37,6 @@
       </div>
     </section>
 
-    <section class="mb-5 bg-light py-5">
-      <div class="container" data-aos="fade-up">
-        <div class="row justify-content-between align-items-lg-center">
-          <div class="col-lg-5 mb-4 mb-lg-0">
-              <h2 class="mb-4 display-4">Mission &amp; Vision</h2>  
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, perspiciatis repellat maxime, adipisci non ipsam at itaque rerum vitae, necessitatibus nulla animi expedita cumque provident inventore? Voluptatum in tempora earum deleniti, culpa odit veniam, ea reiciendis sunt ullam temporibus aut!</p>
-              <p>Fugit eaque illum blanditiis, quo exercitationem maiores autem laudantium unde excepturi dolores quasi eos vero harum ipsa quam laborum illo aut facere voluptates aliquam adipisci sapiente beatae ullam. Tempora culpa iusto illum accusantium cum hic quisquam dolor placeat officiis eligendi.</p>
-          </div>
-          <div class="col-lg-6">
-              <img src="assets/main/img/post-landscape-1.jpg" alt="" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main><!-- End #main -->
 
 
