@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MapelController extends CI_Controller{
     public function __construct(){
         parent::__construct();
-        $this->load->model('m_app');
+        $this->load->model('ModelMapel');
 
         if($this->session->userdata('status') != "login"){
             redirect(base_url("login"));
@@ -12,7 +12,7 @@ class MapelController extends CI_Controller{
     }
 
     function index(){
-        $data['mapel'] = $this->m_app->read_mapel()->result();
+        $data['mapel'] = $this->ModelMapel->read_mapel()->result();
         $this->template->views('admin/data_mapel',$data);        
     }
     function tambah_mapel(){//create mapel
@@ -21,7 +21,7 @@ class MapelController extends CI_Controller{
         $data = array(
             'mata_pelajaran' => $mata_pelajaran
             );
-        $this->m_app->create_mapel($data,'tb_mapel');
+        $this->ModelMapel->create_mapel($data,'tb_mapel');
         redirect('data-mapel');
     }
     function ubah_mapel(){//update mapel
@@ -32,12 +32,12 @@ class MapelController extends CI_Controller{
             'mata_pelajaran' => $mata_pelajaran
         );
 
-        $this->m_app->update_mapel($id,$data);
+        $this->ModelMapel->update_mapel($id,$data);
         redirect('data-mapel');
     }
     function hapus_mapel($id){//delete mapel
         $where = array('id_mapel' => $id);
-        $this->m_app->delete_mapel($where,'tb_mapel');
+        $this->ModelMapel->delete_mapel($where,'tb_mapel');
         redirect('data-mapel');
     }
 

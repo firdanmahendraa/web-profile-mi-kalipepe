@@ -66,7 +66,7 @@
                     </td>
                     <td align="center">
                       <button class="btn btn-warning" style="color: #ffff" data-toggle="modal" data-target="#edit-guru<?php echo $g->id_guru;?>"><i class="fas fa-edit"></i></button>
-                      <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>backend/hapus_guru/<?php echo $g->id_guru; ?>>">
+                      <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>admin/GuruController/hapus_guru/<?php echo $g->id_guru; ?>>">
                         <i class="fas fa-trash"></i>
                       </a>  
                     </td>
@@ -92,7 +92,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <?php echo form_open_multipart('backend/tambah_guru'); ?>
+        <?php echo form_open_multipart('admin/GuruController/tambah_guru'); ?>
         <form>
           <div class="row">
             <div class="col-sm-6">
@@ -172,7 +172,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <?php echo form_open_multipart('backend/edit_guru'); ?>
+        <?php echo form_open_multipart('admin/GuruController/edit_guru'); ?>
         <input type="hidden" name="id" value="<?php echo $ssw->id_guru;?>">
         <form>
           <div class="row">

@@ -52,7 +52,7 @@
                         <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-jenjang<?php echo $ssw->id_pendidikan; ?>">
                           <i class="fas fa-edit" style="color: #fff;"></i>
                         </button>
-                        <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>Backend/hapus_jenjang/<?php echo $ssw->id_pendidikan; ?>>">
+                        <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>admin/JenjangController/hapus_jenjang/<?php echo $ssw->id_pendidikan; ?>>">
                           <i class="fas fa-trash"></i>
                         </a>
                       </td>
@@ -77,7 +77,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="<?php echo base_url('backend/tambah_jenjang') ?>" method="post">
+          <form action="<?php echo base_url('admin/JenjangController/tambah_jenjang') ?>" method="post">
             <div class="form-group">
               <label>Jenjang Pendidikan</label>
               <input type="text" name="jenjang_pendidikan" class="form-control"> 
@@ -107,7 +107,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="<?php echo base_url('backend/ubah_jenjang') ?>" method="post">
+          <form action="<?php echo base_url('admin/JenjangController/ubah_jenjang') ?>" method="post">
             <div class="form-group">
               <label>Posisi Jabatan</label>
               <input type="hidden" name="id" value="<?php echo $j->id_pendidikan ?>">

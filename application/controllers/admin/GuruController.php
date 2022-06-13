@@ -4,7 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class GuruController extends CI_Controller{
     public function __construct(){
         parent::__construct();
-        $this->load->model('m_app');
+        $this->load->model('ModelJenjang');
+        $this->load->model('ModelMapel');
+        $this->load->model('ModelGuru');
 
         if($this->session->userdata('status') != "login"){
             redirect(base_url("login"));
@@ -12,9 +14,9 @@ class GuruController extends CI_Controller{
     }
 
     function index(){
-        $data['jenjang'] = $this->m_app->read_jenjangpendidikan()->result();
-        $data['mapel'] = $this->m_app->read_mapel()->result();      
-        $data['guru'] = $this->m_app->read_guru();
+        $data['jenjang'] = $this->ModelJenjang->read_jenjangpendidikan()->result();
+        $data['mapel'] = $this->ModelMapel->read_mapel()->result();      
+        $data['guru'] = $this->ModelGuru->read_guru();
         $this->template->views('admin/data_guru',$data);        
     }
     public function tambah_guru(){//create guru
@@ -28,7 +30,7 @@ class GuruController extends CI_Controller{
         $this->upload->initialize($config);  
 
         if ($this->upload->do_upload('foto_guru')){
-            $this->m_app->create_guru();
+            $this->ModelGuru->create_guru();
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
             berhasil di simpan
           </div>');
@@ -73,7 +75,7 @@ class GuruController extends CI_Controller{
                 unlink(FCPATH . 'assets/foto/fotoguru/' . $old_image);
             }
             
-            $this->m_app->update_guru($id,$data);
+            $this->ModelGuru->update_guru($id,$data);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">berhasil di simpan</div>');
             redirect('data-guru');
                         
@@ -88,7 +90,7 @@ class GuruController extends CI_Controller{
                 'foto_guru' => $foto_guru
             );
 
-            $this->m_app->edit_guru($id,$data);
+            $this->ModelGuru->edit_guru($id,$data);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
             berhasil di simpan
           </div>');
@@ -96,13 +98,15 @@ class GuruController extends CI_Controller{
         }
     }
     public function hapus_guru($id){//delete guru
-        $data = $this->m_app->ambil_id($id);
-        $path = 'assets/foto/fotoguru/';
-        @unlink($path.$data->foto_guru);
-        if ($this->m_app->delete_guru($id) ==  TRUE) {
-            $this->session->set_flashdata('pesan', ' DATA BERHASIL DIHAPUS');
+        $data = $this->ModelGuru->getDataById($id)->row();
+        $gambar = './assets/foto/fotoguru/'.$data->foto_guru;
+        if (is_readable($gambar) && unlink($gambar)) {
+            $delete = $this->ModelGuru->delete_guru($id);
+            redirect('data-guru');
+        }else{
+            echo "gagal";
+            echo $gambar; 
         }
-        redirect ('data-guru');
     }
 
 

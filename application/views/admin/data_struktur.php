@@ -61,7 +61,9 @@
                     </td>
                     <td align="center">
                       <button class="btn btn-warning" style="color: #ffff" data-toggle="modal" data-target="#edit-guru<?php echo $g->id_struktur;?>"><i class="fas fa-edit"></i></button>
-                      <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                      <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>admin/StrukturController/hapus_struktur/<?php echo $g->id_struktur; ?>>">
+                        <i class="fas fa-trash"></i>
+                      </a> 
                     </td>
                   </tr>
                 </tbody>
@@ -85,7 +87,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <?php echo form_open_multipart('backend/tambah_struktur'); ?>
+        <?php echo form_open_multipart('admin/StrukturController/tambah_struktur'); ?>
         <form>
           <div class="row">
             <div class="col-sm-6">
@@ -161,7 +163,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <?php echo form_open_multipart('backend/edit_guru'); ?>
+        <?php echo form_open_multipart('admin/StrukturController/edit_guru'); ?>
         <input type="hidden" name="id" value="<?php echo $ssw->id_guru;?>">
         <form>
           <div class="row">

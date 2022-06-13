@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class JabatanController extends CI_Controller{
     public function __construct(){
         parent::__construct();
-        $this->load->model('m_app');
+        $this->load->model('ModelJabatan');
 
         if($this->session->userdata('status') != "login"){
             redirect(base_url("login"));
@@ -12,7 +12,7 @@ class JabatanController extends CI_Controller{
     }
 
     function index(){
-        $data['jabatan'] = $this->m_app->read_datajabatan()->result();
+        $data['jabatan'] = $this->ModelJabatan->read_datajabatan()->result();
         $this->template->views('admin/data_jabatan',$data);        
     }
     function tambah_jabatan(){//create jabatan
@@ -21,7 +21,7 @@ class JabatanController extends CI_Controller{
         $data = array(
             'nama_jabatan' => $nama_jabatan
             );
-        $this->m_app->input_jabatan($data,'tb_jabatan');
+        $this->ModelJabatan->input_jabatan($data,'tb_jabatan');
         redirect('data-jabatan');
     }
     function ubah_jabatan(){//update jabatan
@@ -32,12 +32,12 @@ class JabatanController extends CI_Controller{
             'nama_jabatan' => $nama_jabatan
         );
 
-        $this->m_app->update_jabatan($id,$data);
+        $this->ModelJabatan->update_jabatan($id,$data);
         redirect('data-jabatan');
     }
     function hapus_jabatan($id){//delete jabatan
         $where = array('id_jabatan' => $id);
-        $this->m_app->delete_jabatan($where,'tb_jabatan');
+        $this->ModelJabatan->delete_jabatan($where,'tb_jabatan');
         redirect('data-jabatan');
     }
 

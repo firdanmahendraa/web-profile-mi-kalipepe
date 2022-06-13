@@ -52,7 +52,7 @@
                         <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-mapel<?php echo $ssw->id_mapel; ?>">
                           <i class="fas fa-edit" style="color: #fff;"></i>
                         </button>
-                        <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>Backend/hapus_mapel/<?php echo $ssw->id_mapel; ?>>">
+                        <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>admin/MapelController/hapus_mapel/<?php echo $ssw->id_mapel; ?>>">
                           <i class="fas fa-trash"></i>
                         </a>
                       </td>
@@ -77,7 +77,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="<?php echo base_url('backend/tambah_mapel') ?>" method="post">
+          <form action="<?php echo base_url('admin/MapelController/tambah_mapel') ?>" method="post">
             <div class="form-group">
               <label>Mata Pelajaran</label>
               <input type="text" name="mata_pelajaran" class="form-control"> 
@@ -107,7 +107,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="<?php echo base_url('backend/ubah_mapel') ?>" method="post">
+          <form action="<?php echo base_url('admin/MapelController/ubah_mapel') ?>" method="post">
             <div class="form-group">
               <label>Mata Pelajaran</label>
               <input type="hidden" name="id" value="<?php echo $j->id_mapel ?>">

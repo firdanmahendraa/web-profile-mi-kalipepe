@@ -21,7 +21,6 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-             <button class="btn btn-xs btn-primary card-title" data-toggle="modal" data-target="#tambah-jenjang"><i class="fas fa-plus"></i> Tambah Jenjang</button>
              <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 200px;">
                   <input type="text" id="table_search" class="form-control float-right" placeholder="Search">
@@ -52,9 +51,6 @@
                         <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-kategori<?php echo $ssw->id_kategori; ?>">
                           <i class="fas fa-edit" style="color: #fff;"></i>
                         </button>
-                        <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>Backend/hapus_kategori/<?php echo $ssw->id_kategori; ?>>">
-                          <i class="fas fa-trash"></i>
-                        </a>
                       </td>
                     </tr>
                   </tbody>
@@ -77,7 +73,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="<?php echo base_url('backend/tambah_kategori') ?>" method="post">
+          <form action="<?php echo base_url('admin/KategoriController/tambah_kategori') ?>" method="post">
             <div class="form-group">
               <label>Kategori</label>
               <input type="text" name="nama_kategori" class="form-control"> 
@@ -107,7 +103,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="<?php echo base_url('backend/ubah_kategori') ?>" method="post">
+          <form action="<?php echo base_url('admin/KategoriController/ubah_kategori') ?>" method="post">
             <div class="form-group">
               <label>Kategori</label>
               <input type="hidden" name="id" value="<?php echo $j->id_kategori ?>">
