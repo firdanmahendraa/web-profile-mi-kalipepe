@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2022 at 12:13 PM
+-- Generation Time: Jun 14, 2022 at 01:07 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -66,8 +66,7 @@ CREATE TABLE `tb_carousel` (
 
 INSERT INTO `tb_carousel` (`id_carousel`, `gambar`, `headline`, `deskripsi`, `status`, `tanggal_post`) VALUES
 (8, 'ppdb.jpg', 'PPDB ', '', 'active', '2022-06-10'),
-(9, 'carousel.jpg', 'Size Deffault', '', '', '2022-06-10'),
-(10, '1.jpg', 'asdasd', 'asd', '', '2022-06-10');
+(9, 'carousel.jpg', 'Size Deffault', '', '', '2022-06-10');
 
 -- --------------------------------------------------------
 
@@ -90,8 +89,7 @@ INSERT INTO `tb_galeri` (`id_galeri`, `judul`, `tanggal_gl`, `gambar`) VALUES
 (8, 'Kegiatan tatap muka setelah pandemi', '2022-06-06', '2.jpg'),
 (9, 'Kegiatan tatap muka setelah pandemi', '2022-06-06', '1.jpg'),
 (10, 'Pembelajaran Bercocok Tanam', '2022-06-06', '3.jpg'),
-(11, 'TPA Pagi', '2022-06-06', '4.jpg'),
-(12, 'coba gambar', '2022-06-10', 'person-1.jpg');
+(11, 'TPA Pagi', '2022-06-06', '4.jpg');
 
 -- --------------------------------------------------------
 
