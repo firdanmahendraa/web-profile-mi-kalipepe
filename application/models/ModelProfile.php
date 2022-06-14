@@ -35,6 +35,10 @@ class ModelProfile extends CI_Model{
         $this->db->where('id_kategori', '3');
         return $this->db->get();     
     }
+    function update_profile($id,$data){//update guru
+        $this->db->where('id_profile',$id);
+        $this->db->update('tb_profile', $data);
+    }
     function getDataById($id){
         $this->db->where('id_profile',$id);
         return $this->db->get('tb_profile');

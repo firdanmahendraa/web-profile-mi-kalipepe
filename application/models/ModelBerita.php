@@ -24,6 +24,10 @@ class ModelBerita extends CI_Model{
         $this->db->order_by("id_berita", "desc");
         return $this->db->get('tb_berita');         
     }
+    function update_berita($id,$data){//update berita
+        $this->db->where('id_berita',$id);
+        $this->db->update('tb_berita', $data);
+    }
     function getDataById($id){
         $this->db->where('id_berita',$id);
         return $this->db->get('tb_berita');

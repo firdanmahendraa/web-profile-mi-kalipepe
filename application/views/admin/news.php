@@ -120,7 +120,7 @@
 
 <!-- Modal Edit -->
 <?php foreach ($berita as $b) { ?>
-<div class="modal fade" id="edit-berita<?php echo $p->id_berita; ?>">
+<div class="modal fade" id="edit-berita<?php echo $b->id_berita; ?>">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -133,6 +133,7 @@
         <?php echo form_open_multipart('admin/BeritaController/edit_berita'); ?>
         <div class="form-group">
           <label>Judul Post</label>
+          <input type="hidden" name="id" value="<?php echo $b->id_berita ?>">
           <input type="text" name="judul_berita" class="form-control" placeholder="Masukkan Judul" value="<?php echo $b->judul_berita ?>" required>
           <input type="hidden" name="tanggal_berita" value="<?php echo date("Y-m-d"); ?>">
           <input type="hidden" name="author" value="<?php echo $_SESSION['nama'] ?>">

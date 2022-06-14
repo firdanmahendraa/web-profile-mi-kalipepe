@@ -9,11 +9,11 @@ class Api extends RestController {
     function __construct(){
         // Construct the parent class
         parent::__construct();
-        $this->load->model('M_guru');
+        $this->load->model('main_model');
     }
 
     function index_get(){
-        $guru = $this->M_guru->getGuru();
+        $guru = $this->main_model->getGuru();
         if ($guru){
             $this->response([
                 'status' => true,

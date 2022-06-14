@@ -37,36 +37,39 @@ class CarouselController extends CI_Controller{
         }
     }
     public function edit_carousel(){//update carousel
-        $id= $this->input->post('id_carousel');
+        $id= $this->input->post('id');
         $data = $this->modelcarousel->getDataById($id)->row();
         $gambar = './assets/foto/carousel/'.$data->gambar;
-
+            
         if (is_readable($gambar) && unlink($gambar)) {
             $config['upload_path']          = './assets/foto/carousel';
             $config['allowed_types']        = 'gif|jpg|png|jpeg';
             $config['max_size']             = 2048;
             $config['max_width']            = 10000000;
             $config['max_height']           = 10000000;
-
-          $this->load->library('upload', $config);
-          $this->upload->initialize($config);  
-          if (!$this->upload->do_upload('gambar')) {
-              $error = array('error' => $this->upload->display_errors());
-          }else{
+                $headline              = $this->input->post('headline', TRUE);
+                $deskripsi               = $this->input->post('deskripsi', TRUE);
+                $status           = $this->input->post('status', TRUE);
+                $tanggal_post          = $this->input->post('tanggal_post', TRUE);
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config); 
+        }
+        if ($this->upload->do_upload('gambar')){
+            $gambar      = $this->upload->data();
+            $gambar      = $gambar['file_name'];
             $data = array(
-                    'headline' => $this->input->post('headline'),
-                    'deskripsi' => $this->input->post('deskripsi'),
-                    'status' => $this->input->post('status'),
-                    'tanggal_post' => $this->input->post('tanggal_post'),
-                    'gambar' => $gambar
-                );
-            $update = $this->modelcarousel->update_carousel($id,$data);
-            if ($update) {
-                redirect('carousel');
-            }else{
-                echo 'Gagal';
-            }
-          }
+                'headline' => $headline,
+                'deskripsi' => $deskripsi,
+                'status' => $status,
+                'tanggal_post' => $tanggal_post,
+                'gambar' => $gambar
+            );
+            $this->modelcarousel->update_carousel($id,$data);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">berhasil di simpan</div>');
+            redirect('carousel');    
+        }else{
+            echo 'error';
+            redirect('carousel');
         }
     }
     public function hapus_carousel($id){//delete carousel

@@ -24,6 +24,10 @@ class ModelPrestasi extends CI_Model{
         $this->db->order_by("id_prestasi", "desc");
         return $this->db->get('tb_prestasi');         
     }
+    function update_prestasi($id,$data){//update guru
+        $this->db->where('id_prestasi',$id);
+        $this->db->update('tb_prestasi', $data);
+    }
     function getDataById($id){
         $this->db->where('id_prestasi',$id);
         return $this->db->get('tb_prestasi');

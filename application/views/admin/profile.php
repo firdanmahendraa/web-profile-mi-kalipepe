@@ -187,7 +187,8 @@
       </div>
       <div class="modal-body">
         <?php echo form_open_multipart('admin/ProfileController/edit_profile'); ?>
-        <input type="hidden" value="<?php echo $p->id_profile;?>" name="id_kategori">
+        <input type="hidden" value="<?php echo $p->id_profile;?>" name="id">
+        <input type="hidden" value="<?php echo $p->id_kategori;?>" name="id_kategori">
         <div class="form-group">
           <label>Headline</label>
           <input type="text" name="judul_profile" class="form-control" placeholder="Masukkan Judul" value="<?php echo $p->judul_profile;?>" required>
@@ -230,6 +231,7 @@
       </div>
       <div class="modal-body">
         <?php echo form_open_multipart('admin/ProfileController/edit_profile'); ?>
+        <input type="hidden" value="<?php echo $v->id_profile;?>" name="id">
         <input type="hidden" value="<?php echo $v->id_kategori;?>" name="id_kategori">
         <div class="form-group">
           <label>Headline</label>
@@ -314,6 +316,7 @@
       </div>
       <div class="modal-body">
         <?php echo form_open_multipart('admin/ProfileController/edit_profile'); ?>
+        <input type="hidden" value="<?php echo $ex->id_profile;?>" name="id">
         <input type="hidden" value="<?php echo $ex->id_kategori;?>" name="id_kategori">
         <div class="form-group">
           <label>Headline</label>

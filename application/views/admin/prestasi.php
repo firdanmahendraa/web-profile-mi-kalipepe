@@ -58,7 +58,7 @@
                     <td><img src="<?php echo base_url().'assets/foto/fotoprestasi/'.$p->gambar_prestasi ?>" width="50"></td>
                     <td><?php echo $p->author ?></td>
                     <td>
-                      <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-prestasi<?php echo $p->id_prestasi; ?>" ><i class="fas fa-edit" style="color: #fff;"></i></button>
+                      <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#edit-prestasi<?php echo $p->id_prestasi; ?>" ><i class="fas fa-edit" style="color: #fff;"></i></a>
                       <a class="btn btn-sm btn-danger" href="<?php echo base_url()?>admin/prestasiController/hapus_prestasi/<?php echo $p->id_prestasi; ?>>"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
@@ -120,7 +120,7 @@
 
 <!-- Modal Edit -->
 <?php foreach ($prestasi as $b) { ?> 
-<div class="modal fade" id="edit-prestasi<?php echo $p->id_prestasi; ?>">
+<div class="modal fade" id="edit-prestasi<?php echo $b->id_prestasi; ?>">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -133,6 +133,7 @@
         <?php echo form_open_multipart('admin/prestasiController/edit_prestasi'); ?>
         <div class="form-group">
           <label>Judul Post</label>
+          <input type="hidden" name="id" value="<?php echo $b->id_prestasi ?>">
           <input type="text" name="judul_prestasi" class="form-control" placeholder="Masukkan Judul" value="<?php echo $b->judul_prestasi ?>" required>
           <input type="hidden" name="tanggal_prestasi" value="<?php echo date("Y-m-d"); ?>">
           <input type="hidden" name="author" value="<?php echo $_SESSION['nama'] ?>">

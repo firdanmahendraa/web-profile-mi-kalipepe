@@ -212,7 +212,6 @@
                 <label>Mata Pelajaran</label>
                 <select name="id_mapel" type="text" class="custom-select">
                   <option>Pilih Mata Pelajaran</option>
-                  <option value="">Bukan Pengajar</option>
                   <?php foreach($mapel as $j): ?>
                   <option value="<?= $j->id_mapel ?>"><?php echo $j->mata_pelajaran ?></option>
                   <?php endforeach ?>
@@ -222,7 +221,7 @@
                 <label for="exampleInputFile">Foto</label>
                 <div class="input-group">
                   <div class="custom-file">
-                    <input type="file" name="foto_guru" class="custom-file-input" required>
+                    <input type="file" name="foto_guru" class="custom-file-input">
                     <label class="custom-file-label" for="foto">choose file</label>
                   </div>
                 </div>

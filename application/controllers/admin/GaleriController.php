@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class GaleriController extends CI_Controller{
-    public function __construct(){
+    function __construct(){
         parent::__construct();
         $this->load->model('ModelGaleri');
 
@@ -15,7 +15,7 @@ class GaleriController extends CI_Controller{
         $data['galeri'] = $this->ModelGaleri->read_galeri();
         $this->template->views('admin/galeri',$data);        
     }
-    public function tambah_galeri(){//create galeri
+    function tambah_galeri(){//create galeri
         $config['upload_path']          = './assets/foto/fotogaleri';
         $config['allowed_types']        = 'gif|jpg|png|jpeg';
         $config['max_size']             = 10000000;
@@ -26,7 +26,6 @@ class GaleriController extends CI_Controller{
         $this->upload->initialize($config);  
 
         if ( ! $this->upload->do_upload('gambar')){
-            
             print_r($this->upload->display_errors());
             die;
         }else{
@@ -46,7 +45,40 @@ class GaleriController extends CI_Controller{
             redirect('galeri/p');
         }
     }
-    public function hapus_galeri($id){//delete carousel
+    function edit_galeri(){//update galeri
+        $id= $this->input->post('id');
+        $data = $this->ModelGaleri->getDataById($id)->row();
+        $gambar = './assets/foto/fotogaleri/'.$data->gambar;
+            
+        if (is_readable($gambar) && unlink($gambar)) {
+            $config['upload_path']          = './assets/foto/fotogaleri';
+            $config['allowed_types']        = 'gif|jpg|png|jpeg';
+            $config['max_size']             = 2048;
+            $config['max_width']            = 10000000;
+            $config['max_height']           = 10000000;
+                $judul              = $this->input->post('judul', TRUE);
+                $tanggal_gl               = $this->input->post('tanggal_gl', TRUE);
+                $jabatan_galeri           = $this->input->post('jabatan_galeri', TRUE);
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config); 
+        }
+        if ($this->upload->do_upload('gambar')){
+            $gambar      = $this->upload->data();
+            $gambar      = $gambar['file_name'];
+            $data = array(
+                'judul' => $judul,
+                'tanggal_gl' => $tanggal_gl,
+                'gambar' => $gambar
+            );
+            $this->ModelGaleri->update_galeri($id,$data);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">berhasil di simpan</div>');
+            redirect('galeri/p');    
+        }else{
+            echo 'error';
+            redirect('galeri/p');
+        }
+    }
+    function hapus_galeri($id){//delete carousel
         $data = $this->ModelGaleri->getDataById($id)->row();
         $gambar = './assets/foto/fotogaleri/'.$data->gambar;
         if (is_readable($gambar) && unlink($gambar)) {
